@@ -46,7 +46,7 @@ export default function AboutPage() {
                                 From our humble beginnings, we have grown into a leading tech training institute, dedicated to creating a generation of skilled professionals ready to lead and innovate. Our approach combines a hands-on curriculum, expert mentorship, and robust career support to ensure our students don't just learn, but thrive.
                             </p>
                         </div>
-                        <div>
+                        <div className="order-first md:order-last">
                             <Image src="https://placehold.co/600x400.png" alt="Our Team" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="collaborative team meeting" />
                         </div>
                     </div>

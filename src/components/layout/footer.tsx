@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className="bg-primary/5 border-t">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-8">
-          <div className="md:col-span-2 lg:col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          <div className="col-span-2 lg:col-span-2">
             <Logo />
             <p className="mt-4 text-muted-foreground max-w-xs">
               Empowering India's tech talent with industry-leading training and mentorship.
@@ -32,6 +32,7 @@ export default function Footer() {
               <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
               <li><Link href="/courses" className="text-muted-foreground hover:text-primary">Courses</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+              <li><Link href="/bookmarks" className="text-muted-foreground hover:text-primary">Bookmarks</Link></li>
             </ul>
           </div>
           
@@ -44,10 +45,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 md:col-span-1">
             <h3 className="font-semibold text-primary font-headline">Contact Us</h3>
             <ul className="mt-4 space-y-2 text-muted-foreground">
-                <li><a href="mailto:info@samarthview.com" className="hover:text-primary">info@samarthview.com</a></li>
+                <li className="break-all"><a href="mailto:info@samarthview.com" className="hover:text-primary">info@samarthview.com</a></li>
                 <li><a href="tel:+911234567890" className="hover:text-primary">+91 12345 67890</a></li>
                 <li>Bengaluru, India</li>
             </ul>

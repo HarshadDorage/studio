@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, Bookmark } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { useBookmarks } from '@/context/bookmark-context';
@@ -21,14 +21,15 @@ export default function Header() {
   const pathname = usePathname();
   const { bookmarks } = useBookmarks();
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => {
+  const NavLink = ({ href, label, className }: { href: string; label: string, className?: string; }) => {
     const isActive = pathname === href;
     return (
       <Link
         href={href}
         className={cn(
           'text-sm font-medium transition-colors hover:text-primary',
-          isActive ? 'text-primary' : 'text-muted-foreground'
+          isActive ? 'text-primary' : 'text-muted-foreground',
+          className
         )}
       >
         {label}
@@ -42,30 +43,9 @@ export default function Header() {
         <div className="mr-4 hidden md:flex">
           <Logo />
         </div>
-        <div className="hidden md:flex md:flex-1 items-center justify-center space-x-6">
-          <nav className="flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <NavLink key={link.href} {...link} />
-            ))}
-             <Link
-                href="/bookmarks"
-                className={cn(
-                'text-sm font-medium transition-colors hover:text-primary relative',
-                pathname === '/bookmarks' ? 'text-primary' : 'text-muted-foreground'
-                )}
-            >
-                Bookmarks
-                {bookmarks.length > 0 && (
-                    <span className="absolute -top-1 -right-3 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
-                        {bookmarks.length}
-                    </span>
-                )}
-            </Link>
-          </nav>
-        </div>
-
-        <div className="flex flex-1 items-center justify-between md:justify-end">
-          <div className="md:hidden">
+        
+        <div className="flex flex-1 items-center justify-start md:justify-center">
+           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -73,45 +53,80 @@ export default function Header() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left">
-                <div className="flex flex-col p-6">
-                  <Logo />
-                  <nav className="mt-8 flex flex-col space-y-4">
+              <SheetContent side="left" className="p-0">
+                <div className="flex flex-col h-full">
+                  <div className="p-6">
+                    <Logo />
+                  </div>
+                  <nav className="mt-2 flex flex-col gap-1 p-4">
                     {navLinks.map((link) => (
+                      <SheetClose asChild key={link.href}>
                        <Link
-                          key={link.href}
                           href={link.href}
                           className={cn(
-                            'text-lg font-medium transition-colors hover:text-primary',
-                            pathname === link.href ? 'text-primary' : 'text-foreground'
+                            'rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent',
+                            pathname === link.href ? 'bg-accent text-primary' : 'text-foreground'
                           )}
                         >
                           {link.label}
                         </Link>
+                      </SheetClose>
                     ))}
-                    <Link
-                        href="/bookmarks"
-                        className={cn(
-                        'text-lg font-medium transition-colors hover:text-primary relative',
-                        pathname === '/bookmarks' ? 'text-primary' : 'text-foreground'
-                        )}
-                    >
-                        Bookmarks
-                    </Link>
+                    <SheetClose asChild>
+                      <Link
+                          href="/bookmarks"
+                          className={cn(
+                          'rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent flex items-center justify-between',
+                          pathname === '/bookmarks' ? 'bg-accent text-primary' : 'text-foreground'
+                          )}
+                      >
+                          Bookmarks
+                          {bookmarks.length > 0 && (
+                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs">
+                                {bookmarks.length}
+                            </span>
+                          )}
+                      </Link>
+                    </SheetClose>
                   </nav>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-          <div className="md:hidden">
-            <Logo />
+
+          <div className="hidden md:flex flex-1 items-center justify-center space-x-6">
+            <nav className="flex items-center space-x-6">
+              {navLinks.map((link) => (
+                <NavLink key={link.href} {...link} />
+              ))}
+               <Link
+                  href="/bookmarks"
+                  className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary relative',
+                  pathname === '/bookmarks' ? 'text-primary' : 'text-muted-foreground'
+                  )}
+              >
+                  Bookmarks
+                  {bookmarks.length > 0 && (
+                      <span className="absolute -top-1 -right-3 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
+                          {bookmarks.length}
+                      </span>
+                  )}
+              </Link>
+            </nav>
           </div>
-          <div className="flex items-center gap-2">
-            <NotificationBell />
-             <Button asChild>
-                <Link href="/contact">Get In Touch</Link>
-            </Button>
+        </div>
+
+        <div className="flex flex-none items-center justify-end gap-2">
+          <div className="md:hidden flex-1">
+              <div className="flex justify-center">
+                 <Logo />
+              </div>
           </div>
+          <NotificationBell />
+           <Button asChild className="hidden sm:inline-flex">
+              <Link href="/contact">Get In Touch</Link>
+          </Button>
         </div>
       </div>
     </header>

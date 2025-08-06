@@ -129,21 +129,21 @@ export default function ContactPage() {
                     </CardHeader>
                     <CardContent className="space-y-4 text-muted-foreground">
                         <div className="flex items-start gap-4">
-                            <MapPin className="h-6 w-6 text-primary mt-1" />
+                            <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-foreground">Address</h3>
                                 <p>123 Tech Park, Koramangala<br />Bengaluru, Karnataka 560034<br />India</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
-                            <Mail className="h-6 w-6 text-primary mt-1" />
+                            <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-foreground">Email</h3>
-                                <a href="mailto:info@samarthview.com" className="hover:text-primary">info@samarthview.com</a>
+                                <a href="mailto:info@samarthview.com" className="hover:text-primary break-all">info@samarthview.com</a>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
-                            <Phone className="h-6 w-6 text-primary mt-1" />
+                            <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                             <div>
                                 <h3 className="font-semibold text-foreground">Phone</h3>
                                 <a href="tel:+911234567890" className="hover:text-primary">+91 12345 67890</a>

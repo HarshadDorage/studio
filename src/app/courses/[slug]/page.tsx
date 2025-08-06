@@ -89,7 +89,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               <span>20 Enrolled</span>
             </div>
           </div>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button size="lg">Enroll Now</Button>
             <Button size="lg" variant="ghost">
               <Share2 className="mr-2 h-5 w-5" />
@@ -149,9 +149,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               <Accordion type="single" collapsible className="w-full" defaultValue="item-0">
                 {courseContent.map((item, index) => (
                   <AccordionItem value={`item-${index}`} key={index}>
-                    <AccordionTrigger className="text-lg font-semibold hover:no-underline data-[state=open]:text-accent data-[state=open]:border-b-accent/50">
+                    <AccordionTrigger className="text-lg font-semibold hover:no-underline data-[state=open]:text-accent data-[state=open]:border-b-accent/50 text-left">
                         <div className="flex items-center gap-4">
-                            <item.icon className="h-6 w-6 text-primary transition-colors data-[state=open]:text-accent" />
+                            <item.icon className="h-6 w-6 text-primary transition-colors data-[state=open]:text-accent flex-shrink-0" />
                             <span>{item.title}</span>
                         </div>
                     </AccordionTrigger>
@@ -181,7 +181,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </main>
 
           {/* Sticky Sidebar */}
-          <aside className="hidden lg:block">
+          <aside>
             <div className="sticky top-24 space-y-6">
               <Card className="shadow-lg border-primary/20">
                 <CardHeader>
