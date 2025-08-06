@@ -33,7 +33,7 @@ export default function StartLearningCta() {
                                 Don't wait to build your future. Our expert-led courses are designed to get you job-ready from day one.
                             </p>
                             <div className="mt-6">
-                                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                                <Button asChild size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                                     <Link href="/courses">
                                         Explore All Courses
                                         <ArrowRight className="ml-2 h-5 w-5" />

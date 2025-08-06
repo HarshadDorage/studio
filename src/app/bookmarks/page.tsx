@@ -10,10 +10,10 @@ export default function BookmarksPage() {
 
   return (
     <>
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-primary/10 text-primary py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">Your Bookmarks</h1>
-          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary-foreground/80">
+          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary/80">
             The courses you've saved for later.
           </p>
         </div>

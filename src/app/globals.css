@@ -14,13 +14,13 @@ body {
     --card-foreground: 20 14% 4.9%;
     --popover: 20 50% 98%;
     --popover-foreground: 20 14% 4.9%;
-    --primary: 22 90% 55%; /* Softer Orange */
+    --primary: 22 90% 55%;
     --primary-foreground: 20 0% 100%;
     --secondary: 25 70% 94%;
     --secondary-foreground: 25 80% 20%;
     --muted: 25 70% 96%;
     --muted-foreground: 25 30% 45%;
-    --accent: 35 90% 60%; /* Gold */
+    --accent: 35 90% 60%;
     --accent-foreground: 20 14% 4.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;

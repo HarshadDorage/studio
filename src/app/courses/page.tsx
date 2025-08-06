@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function CoursesPage() {
   return (
     <>
-      <section className="bg-primary text-primary-foreground py-20">
+      <section className="bg-primary/10 text-primary py-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">Our Courses</h1>
-          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary-foreground/80">
+          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary/80">
             Find the perfect course to launch or advance your career in technology.
           </p>
         </div>

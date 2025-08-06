@@ -50,11 +50,11 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   return (
     <div className="bg-background font-sans">
       {/* Header Section */}
-      <header className="bg-primary text-primary-foreground py-12 md:py-20">
+      <header className="bg-primary/10 text-primary py-12 md:py-20">
         <div className="container mx-auto px-4 md:px-6">
           <h1 className="text-3xl md:text-5xl font-bold font-headline">UX/UI Designer Master Class</h1>
-          <p className="mt-2 text-lg md:text-xl text-primary-foreground/80">Figma, Adobe Creative Suite, HTML/HTML5/CSS/CSS3/SCSS/Node.js + more</p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-primary-foreground/90">
+          <p className="mt-2 text-lg md:text-xl text-primary/80">Figma, Adobe Creative Suite, HTML/HTML5/CSS/CSS3/SCSS/Node.js + more</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-primary/90">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
               <span>12 weeks</span>
@@ -69,8 +69,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             </div>
           </div>
           <div className="mt-8 flex gap-4">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">Enroll Now</Button>
-            <Button size="lg" variant="ghost" className="hover:bg-primary-foreground/10 hover:text-primary-foreground">
+            <Button size="lg">Enroll Now</Button>
+            <Button size="lg" variant="outline">
               <Share2 className="mr-2 h-5 w-5" />
               Share
             </Button>
@@ -172,7 +172,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                     <CardTitle className="text-xl font-headline">Ready to Start?</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
-                  <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button size="lg" className="w-full">
                     <GraduationCap className="mr-2"/> Enroll Now
                   </Button>
                    <Button asChild variant="outline" className="w-full">
