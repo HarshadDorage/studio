@@ -8,19 +8,19 @@ body {
 
 @layer base {
   :root {
-    --background: 40 33% 98%;
+    --background: 40 100% 98%; /* Ivory */
     --foreground: 222.2 84% 4.9%;
-    --card: 40 33% 98%;
+    --card: 40 100% 98%; /* Ivory */
     --card-foreground: 222.2 84% 4.9%;
-    --popover: 40 33% 98%;
+    --popover: 40 100% 98%; /* Ivory */
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 231 48% 48%;
+    --primary: 231 48% 48%; /* Indigo */
     --primary-foreground: 210 40% 98%;
     --secondary: 231 40% 92%;
     --secondary-foreground: 231 48% 28%;
     --muted: 231 40% 95%;
     --muted-foreground: 225.2 65.7% 40%;
-    --accent: 51 100% 50%;
+    --accent: 45 100% 50%; /* Turmeric Yellow */
     --accent-foreground: 60 9.1% 9.8%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
