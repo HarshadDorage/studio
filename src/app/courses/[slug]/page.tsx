@@ -5,6 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap } from 'lucide-react';
+import TrainerCard from '@/components/trainer-card';
+import Testimonials from '@/components/testimonials';
+import ReviewSummarizer from './components/review-summarizer';
 
 export default function CourseDetailPage({ params }: { params: { slug: string } }) {
   // NOTE: This page is designed for the 'advanced-ui-ux-design' slug, but will use data from other courses.
@@ -13,6 +16,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   if (!course) {
     notFound();
   }
+
+  const allReviews = courses.flatMap(c => c.reviews);
 
   const whatYoullLearn = [
     "Build beautifully designed web and mobile projects for your portfolio.",
@@ -37,6 +42,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
     { title: "Introduction to Node.js", content: "Get a basic understanding of server-side logic with Node.js to build more dynamic interfaces." },
     { title: "Building Your Portfolio", content: "Create a professional portfolio website from scratch to showcase your best work." },
   ];
+
+  const reviewsText = course.reviews.map(r => r.comment).join('\n');
 
   return (
     <div className="bg-background font-sans">
@@ -130,7 +137,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             </section>
 
             {/* Course Content */}
-            <section>
+            <section className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Content</h2>
               <Accordion type="single" collapsible className="w-full">
                 {courseContent.map((item, index) => (
@@ -143,6 +150,14 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 ))}
               </Accordion>
             </section>
+
+            {/* Reviews */}
+            <section>
+                 <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Student Feedback</h2>
+                <ReviewSummarizer courseName={course.title} reviews={reviewsText} />
+                <Testimonials reviews={allReviews} />
+            </section>
+
           </main>
 
           {/* Sticky Sidebar */}
@@ -165,18 +180,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 </CardContent>
               </Card>
 
-              <Card className="shadow-lg">
-                <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                        <Image src={course.trainer.avatarUrl} alt={course.trainer.name} width={64} height={64} className="rounded-full" data-ai-hint="professional trainer portrait" />
-                        <div>
-                            <h3 className="font-bold">{course.trainer.name}</h3>
-                            <p className="text-sm text-primary">{course.trainer.title}</p>
-                        </div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-4">{course.trainer.bio}</p>
-                </CardContent>
-              </Card>
+              <TrainerCard trainer={course.trainer} />
 
             </div>
           </aside>
