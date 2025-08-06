@@ -70,7 +70,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
           <div className="mt-8 flex gap-4">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">Enroll Now</Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button size="lg" variant="ghost" className="hover:bg-primary-foreground/10 hover:text-primary-foreground">
               <Share2 className="mr-2 h-5 w-5" />
               Share
             </Button>
