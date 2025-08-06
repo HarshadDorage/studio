@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import CourseCard from "@/components/course-card";
 import { courses } from "@/lib/data";
 import { Users, BookOpen, Target } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
 import StartLearningCta from "@/components/start-learning-cta";
+import CourseCarousel from "@/components/course-carousel";
 
 const whyChooseUs = [
     {
@@ -76,19 +76,17 @@ export default function Home() {
       </section>
 
       <section id="courses" className="py-16 sm:py-24 bg-primary/5">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center">
+        <div className="container mx-auto">
+          <div className="text-center px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Featured Courses</h2>
             <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
               Jumpstart your career with our industry-focused training programs.
             </p>
           </div>
-          <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {courses.slice(0, 4).map((course) => (
-              <CourseCard key={course.id} course={course} isFeatured={true} />
-            ))}
+          <div className="mt-16">
+            <CourseCarousel courses={courses.slice(0, 4)} />
           </div>
-           <div className="text-center mt-12">
+           <div className="text-center mt-12 px-4 md:px-6">
             <Button asChild variant="outline" size="lg">
               <Link href="/courses">View All Courses</Link>
             </Button>
