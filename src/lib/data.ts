@@ -1,6 +1,6 @@
 
 import type { Course, TeamMember, Placement, Notification } from '@/types';
-import { Linkedin, Twitter, Dribbble } from 'lucide-react';
+import { Briefcase, FileText, Users, Award, Linkedin, Twitter, Dribbble } from 'lucide-react';
 
 export const trainers = {
   ananyaSharma: {
@@ -185,6 +185,38 @@ export const placements: Placement[] = [
         companyLogoUrl: 'https://placehold.co/120x40.png',
         avatarUrl: 'https://placehold.co/100x100.png'
     }
+];
+
+export const companyLogos = [
+    { name: 'Google', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Microsoft', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Amazon', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Swiggy', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Flipkart', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Zomato', logoUrl: 'https://placehold.co/140x70.png' },
+];
+
+export const placementAssistance = [
+    {
+        icon: FileText,
+        title: "Resume Building",
+        description: "Craft a professional resume that stands out to recruiters and highlights your skills and projects."
+    },
+    {
+        icon: Users,
+        title: "Mock Interviews",
+        description: "Practice your interviewing skills with our experts and get personalized feedback to build your confidence."
+    },
+    {
+        icon: Briefcase,
+        title: "Job Fairs",
+        description: "Get exclusive access to virtual and in-person job fairs with our network of hiring partners."
+    },
+     {
+        icon: Award,
+        title: "Portfolio Development",
+        description: "Build a strong portfolio of real-world projects that showcase your abilities to potential employers."
+    },
 ];
 
 export const notifications: Notification[] = [

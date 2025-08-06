@@ -13,6 +13,7 @@ import NotificationBell from './notification-bell';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/courses', label: 'Courses' },
+  { href: '/placements', label: 'Placements' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
