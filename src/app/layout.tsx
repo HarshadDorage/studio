@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <AnnouncementBanner />
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow animate-in fade-in duration-500">{children}</main>
             <Footer />
           </div>
           <WhatsAppButton />
