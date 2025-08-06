@@ -14,7 +14,7 @@ export interface Trainer {
   title: string;
   bio: string;
   avatarUrl: string;
-  socials?: { name: string; url: string; icon: any }[];
+  socials?: { name: string; url: string; icon: string }[];
   coursesTaught?: string[];
 }
 
@@ -37,7 +37,7 @@ export interface TeamMember {
   title: string;
   bio: string;
   avatarUrl: string;
-  socials?: { name: string; url: string; icon: React.ElementType }[];
+  socials?: { name: string; url: string; icon: string | React.ElementType }[];
   coursesTaught?: string[];
 }
 

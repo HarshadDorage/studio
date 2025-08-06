@@ -10,13 +10,19 @@ import {
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Linkedin, Twitter, Dribbble } from 'lucide-react';
 import './flip-card.css';
 
 interface TrainerSliderProps {
   trainers: TeamMember[];
 }
+
+const socialIconMap: { [key: string]: React.ElementType } = {
+    LinkedIn: Linkedin,
+    Twitter: Twitter,
+    Dribbble: Dribbble,
+};
 
 const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -72,17 +78,21 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
             </div>
 
             <div className="flex justify-center gap-4">
-              {trainer.socials?.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-transform hover:scale-110"
-                >
-                  <social.icon className="h-6 w-6" />
-                </Link>
-              ))}
+              {trainer.socials?.map((social) => {
+                const Icon = socialIconMap[social.icon as string];
+                if (!Icon) return null;
+                return (
+                    <Link
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-transform hover:scale-110"
+                    >
+                    <Icon className="h-6 w-6" />
+                    </Link>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -128,8 +128,8 @@ export const team: TeamMember[] = [
         bio: 'Rajesh is a visionary leader with 20+ years in the tech industry. He founded Samarthview to bridge the skill gap in India\'s tech workforce.',
         avatarUrl: 'https://placehold.co/150x150.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: Linkedin },
-            { name: 'Twitter', url: '#', icon: Twitter },
+            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
+            { name: 'Twitter', url: '#', icon: 'Twitter' },
         ],
         coursesTaught: ['Keynote Speaker']
     },
@@ -139,7 +139,7 @@ export const team: TeamMember[] = [
         bio: 'Sunita ensures that our operations run smoothly, from student admissions to course delivery, providing a seamless experience for everyone.',
         avatarUrl: 'https://placehold.co/150x150.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: Linkedin },
+            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
         ],
         coursesTaught: ['Student Onboarding']
     },
@@ -149,8 +149,8 @@ export const team: TeamMember[] = [
         bio: 'Amit works with our trainers to design and update our curriculum, ensuring it stays relevant to the fast-paced tech industry.',
         avatarUrl: 'https://placehold.co/150x150.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: Linkedin },
-            { name: 'Twitter', url: '#', icon: Twitter },
+            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
+            { name: 'Twitter', url: '#', icon: 'Twitter' },
         ],
         coursesTaught: ['Advanced UI/UX Design', 'Full-Stack Python Development']
     }
