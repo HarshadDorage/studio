@@ -1,0 +1,9 @@
+
+.testimonial-carousel .embla__slide {
+  opacity: 0.2;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.testimonial-carousel .embla__slide.is-snapped {
+  opacity: 1;
+}

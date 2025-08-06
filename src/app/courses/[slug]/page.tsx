@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import { courses } from '@/lib/data';
 import Image from 'next/image';
@@ -153,9 +154,11 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             </section>
 
             {/* Reviews */}
-            <section>
-                 <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Student Feedback</h2>
-                <ReviewSummarizer courseName={course.title} reviews={reviewsText} />
+            <section className="py-12">
+                 <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6 text-center">Student Feedback</h2>
+                <div className="mb-12">
+                    <ReviewSummarizer courseName={course.title} reviews={reviewsText} />
+                </div>
                 <Testimonials reviews={allReviews} />
             </section>
 

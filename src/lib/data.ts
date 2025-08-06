@@ -1,3 +1,4 @@
+
 import type { Course, TeamMember, Placement, Notification } from '@/types';
 
 export const trainers = {
@@ -46,9 +47,9 @@ export const courses: Course[] = [
     trainer: trainers.ananyaSharma,
     certification: 'Certified UI/UX Professional on successful completion of the course and final project.',
     reviews: [
-      { id: 1, name: 'Aarav Gupta', rating: 5, comment: 'Ananya ma\'am is an amazing teacher. The course was very practical.', date: '2024-05-20' },
-      { id: 2, name: 'Saanvi Reddy', rating: 4, comment: 'Great content, but I wished for more 1-on-1 sessions.', date: '2024-05-15' },
-      { id: 3, name: 'Vivaan Joshi', rating: 5, comment: 'The portfolio I built in this course helped me get a job!', date: '2024-04-30' },
+      { id: 1, name: 'Aarav Gupta', rating: 5, comment: 'Ananya ma\'am is an amazing teacher. The course was very practical.', date: '2024-05-20', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Advanced UI/UX Design' },
+      { id: 2, name: 'Saanvi Reddy', rating: 4, comment: 'Great content, but I wished for more 1-on-1 sessions.', date: '2024-05-15', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Advanced UI/UX Design' },
+      { id: 3, name: 'Vivaan Joshi', rating: 5, comment: 'The portfolio I built in this course helped me get a job!', date: '2024-04-30', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Advanced UI/UX Design' },
     ],
   },
   {
@@ -69,8 +70,8 @@ export const courses: Course[] = [
     trainer: trainers.vikramSingh,
     certification: 'Certified DevOps Engineer after passing the hands-on final exam.',
     reviews: [
-      { id: 1, name: 'Advik Kumar', rating: 5, comment: 'Vikram sir explains complex topics so simply. Best DevOps course!', date: '2024-06-01' },
-      { id: 2, name: 'Myra Das', rating: 5, comment: 'Very hands-on. I feel confident in my skills now.', date: '2024-05-28' },
+      { id: 1, name: 'Advik Kumar', rating: 5, comment: 'Vikram sir explains complex topics so simply. Best DevOps course!', date: '2024-06-01', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'DevOps Engineering Pro' },
+      { id: 2, name: 'Myra Das', rating: 5, comment: 'Very hands-on. I feel confident in my skills now.', date: '2024-05-28', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'DevOps Engineering Pro' },
     ],
   },
   {
@@ -91,8 +92,8 @@ export const courses: Course[] = [
     trainer: trainers.priyaPatel,
     certification: 'Certified Full-Stack Python Developer upon successful project submission.',
     reviews: [
-      { id: 1, name: 'Ishaan Aggarwal', rating: 4, comment: 'The course is very intensive but worth it. Priya ma\'am is very knowledgeable.', date: '2024-05-18' },
-      { id: 2, name: 'Diya Sharma', rating: 5, comment: 'I built a full e-commerce site from scratch. An incredible experience.', date: '2024-05-12' },
+      { id: 1, name: 'Ishaan Aggarwal', rating: 4, comment: 'The course is very intensive but worth it. Priya ma\'am is very knowledgeable.', date: '2024-05-18', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Full-Stack Python Development' },
+      { id: 2, name: 'Diya Sharma', rating: 5, comment: 'I built a full e-commerce site from scratch. An incredible experience.', date: '2024-05-12', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Full-Stack Python Development' },
     ],
   },
   {
@@ -113,8 +114,8 @@ export const courses: Course[] = [
     trainer: trainers.rohanMehta,
     certification: 'Preparation and guidance for the official AWS Certified Cloud Practitioner exam.',
     reviews: [
-      { id: 1, name: 'Kabir Singh', rating: 5, comment: 'Passed my AWS exam on the first try thanks to this course!', date: '2024-06-10' },
-      { id: 2, name: 'Anika Verma', rating: 5, comment: 'Rohan sir\'s teaching style is excellent. The material was very clear.', date: '2024-06-05' },
+      { id: 1, name: 'Kabir Singh', rating: 5, comment: 'Passed my AWS exam on the first try thanks to this course!', date: '2024-06-10', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'AWS Cloud Practitioner' },
+      { id: 2, name: 'Anika Verma', rating: 5, comment: 'Rohan sir\'s teaching style is excellent. The material was very clear.', date: '2024-06-05', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'AWS Cloud Practitioner' },
     ],
   },
 ];

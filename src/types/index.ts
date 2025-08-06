@@ -1,9 +1,12 @@
+
 export interface Review {
   id: number;
   name: string;
   rating: number;
   comment: string;
   date: string;
+  avatarUrl: string;
+  courseTaken: string;
 }
 
 export interface Trainer {
