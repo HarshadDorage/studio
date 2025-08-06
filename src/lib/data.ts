@@ -35,6 +35,7 @@ export const courses: Course[] = [
     description: 'Master the art of creating user-centric and visually stunning digital products.',
     longDescription: 'This comprehensive course covers everything from user research and wireframing to prototyping and usability testing. You\'ll work with industry-standard tools like Figma and learn design thinking principles to solve complex problems. Perfect for aspiring product designers.',
     imageUrl: 'https://placehold.co/600x400.png',
+    syllabusPdfUrl: '/pdfs/advanced-ui-ux-design-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Design Thinking', content: 'Introduction to user-centered design, empathy maps, and journey mapping.' },
       { title: 'Module 2: User Research', content: 'Techniques for user interviews, surveys, and competitive analysis.' },
@@ -57,6 +58,7 @@ export const courses: Course[] = [
     description: 'Learn to build and manage scalable infrastructure with modern DevOps practices.',
     longDescription: 'Bridge the gap between development and operations. This course covers Git, Docker, Kubernetes, Jenkins, and Terraform. You\'ll learn to build automated CI/CD pipelines and manage infrastructure as code, essential skills for any modern software team.',
     imageUrl: 'https://placehold.co/600x400.png',
+    syllabusPdfUrl: '/pdfs/devops-engineering-pro-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Version Control with Git', content: 'Mastering branching, merging, and collaborative workflows.' },
       { title: 'Module 2: Containerization with Docker', content: 'Creating and managing containers for consistent environments.' },
@@ -78,6 +80,7 @@ export const courses: Course[] = [
     description: 'Become a versatile developer by mastering both front-end and back-end with Python.',
     longDescription: 'This course takes you from Python basics to building complete web applications. You\'ll learn Django for the back-end, React for the front-end, and how to connect them with a REST API. It\'s a complete package for anyone wanting to become a full-stack developer.',
     imageUrl: 'https://placehold.co/600x400.png',
+    syllabusPdfUrl: '/pdfs/full-stack-python-development-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Python Fundamentals', content: 'Data types, control flow, functions, and OOP in Python.' },
       { title: 'Module 2: Django Web Framework', content: 'Models, views, templates, and the admin interface.' },
@@ -99,6 +102,7 @@ export const courses: Course[] = [
     description: 'Get foundational knowledge of the AWS cloud and prepare for the certification exam.',
     longDescription: 'Start your cloud journey with this foundational course. It covers core AWS services, security, architecture principles, and pricing models. This course is aligned with the official AWS Certified Cloud Practitioner exam, making it the perfect starting point for a career in cloud.',
     imageUrl: 'https://placehold.co/600x400.png',
+    syllabusPdfUrl: '/pdfs/aws-cloud-practitioner-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Cloud Concepts', content: 'Understanding the benefits and economics of cloud computing.' },
       { title: 'Module 2: Core AWS Services', content: 'EC2, S3, RDS, VPC - what they are and when to use them.' },

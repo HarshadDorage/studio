@@ -20,6 +20,7 @@ export interface Course {
   description: string;
   longDescription: string;
   imageUrl: string;
+  syllabusPdfUrl?: string;
   syllabus: { title: string; content: string }[];
   trainer: Trainer;
   certification: string;

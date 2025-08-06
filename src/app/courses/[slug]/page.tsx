@@ -8,6 +8,7 @@ import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Brief
 import TrainerCard from '@/components/trainer-card';
 import Testimonials from '@/components/testimonials';
 import ReviewSummarizer from './components/review-summarizer';
+import Link from 'next/link';
 
 export default function CourseDetailPage({ params }: { params: { slug: string } }) {
   // NOTE: This page is designed for the 'advanced-ui-ux-design' slug, but will use data from other courses.
@@ -171,8 +172,10 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   <Button size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                     <GraduationCap className="mr-2"/> Enroll Now
                   </Button>
-                   <Button variant="outline" className="w-full">
-                    <Download className="mr-2"/> Download Syllabus
+                   <Button asChild variant="outline" className="w-full">
+                    <Link href={course.syllabusPdfUrl || '#'} target="_blank" rel="noopener noreferrer">
+                        <Download className="mr-2"/> Download Syllabus
+                    </Link>
                   </Button>
                   <Button variant="outline" className="w-full">
                     <HelpCircle className="mr-2"/> Ask a Question
