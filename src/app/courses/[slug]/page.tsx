@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap } from 'lucide-react';
+import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap, Video, FileText } from 'lucide-react';
 import TrainerCard from '@/components/trainer-card';
 import Testimonials from '@/components/testimonials';
 import ReviewSummarizer from './components/review-summarizer';
@@ -35,14 +35,14 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   ];
 
   const courseContent = [
-    { title: "Introduction to User-Centered Design", content: "Learn the fundamentals of designing for users, including empathy mapping and user personas." },
-    { title: "UI vs. UX: Key Differences", content: "Understand the distinct roles and responsibilities of UI and UX designers and how they collaborate." },
-    { title: "Design Theory & Principles", content: "Explore core concepts like color theory, typography, and layout that form the foundation of good design." },
-    { title: "Wireframing & Prototyping", content: "Master the process of creating low-fidelity wireframes and interactive high-fidelity prototypes in Figma." },
-    { title: "High-Fidelity Design", content: "Dive deep into creating polished, pixel-perfect designs ready for development." },
-    { title: "HTML5, CSS3, & SCSS", content: "Learn the building blocks of the web to bring your designs to life." },
-    { title: "Introduction to Node.js", content: "Get a basic understanding of server-side logic with Node.js to build more dynamic interfaces." },
-    { title: "Building Your Portfolio", content: "Create a professional portfolio website from scratch to showcase your best work." },
+    { title: "Introduction to User-Centered Design", content: "Learn the fundamentals of designing for users, including empathy mapping and user personas.", time: "45 mins", icon: BookOpen },
+    { title: "UI vs. UX: Key Differences", content: "Understand the distinct roles and responsibilities of UI and UX designers and how they collaborate.", time: "30 mins", icon: FileText },
+    { title: "Design Theory & Principles", content: "Explore core concepts like color theory, typography, and layout that form the foundation of good design.", time: "1 hour", icon: Brush },
+    { title: "Wireframing & Prototyping", content: "Master the process of creating low-fidelity wireframes and interactive high-fidelity prototypes in Figma.", time: "2 hours", icon: Video },
+    { title: "High-Fidelity Design", content: "Dive deep into creating polished, pixel-perfect designs ready for development.", time: "2.5 hours", icon: Video },
+    { title: "HTML5, CSS3, & SCSS", content: "Learn the building blocks of the web to bring your designs to life.", time: "3 hours", icon: Code },
+    { title: "Introduction to Node.js", content: "Get a basic understanding of server-side logic with Node.js to build more dynamic interfaces.", time: "1.5 hours", icon: Code },
+    { title: "Building Your Portfolio", content: "Create a professional portfolio website from scratch to showcase your best work.", time: "4 hours", icon: Briefcase },
   ];
 
   const reviewsText = course.reviews.map(r => r.comment).join('\n');
@@ -141,12 +141,23 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             {/* Course Content */}
             <section className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Content</h2>
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full" defaultValue="item-0">
                 {courseContent.map((item, index) => (
                   <AccordionItem value={`item-${index}`} key={index}>
-                    <AccordionTrigger className="text-lg font-semibold hover:no-underline">{item.title}</AccordionTrigger>
+                    <AccordionTrigger className="text-lg font-semibold hover:no-underline data-[state=open]:text-accent data-[state=open]:border-b-accent/50">
+                        <div className="flex items-center gap-4">
+                            <item.icon className="h-6 w-6 text-primary transition-colors data-[state=open]:text-accent" />
+                            <span>{item.title}</span>
+                        </div>
+                    </AccordionTrigger>
                     <AccordionContent className="text-foreground/80">
-                      {item.content}
+                      <div className="flex items-center justify-between mb-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-2">
+                              <Clock className="h-4 w-4" />
+                              <span>{item.time}</span>
+                          </div>
+                      </div>
+                      <p>{item.content}</p>
                     </AccordionContent>
                   </AccordionItem>
                 ))}
