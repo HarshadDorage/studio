@@ -4,6 +4,7 @@ import CourseCard from "@/components/course-card";
 import { courses } from "@/lib/data";
 import { Users, BookOpen, Target } from "lucide-react";
 import Link from "next/link";
+import AlumniGallery from "@/components/alumni-gallery";
 
 const whyChooseUs = [
     {
@@ -93,6 +94,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AlumniGallery />
     </div>
   );
 }

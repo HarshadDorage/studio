@@ -32,3 +32,11 @@ export interface TeamMember {
   bio: string;
   avatarUrl: string;
 }
+
+export interface Placement {
+    name: string;
+    quote: string;
+    company: string;
+    companyLogoUrl: string;
+    avatarUrl: string;
+}

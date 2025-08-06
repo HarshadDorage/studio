@@ -1,4 +1,4 @@
-import type { Course, TeamMember } from '@/types';
+import type { Course, TeamMember, Placement } from '@/types';
 
 export const trainers = {
   ananyaSharma: {
@@ -133,5 +133,36 @@ export const team: TeamMember[] = [
         title: 'Director of Curriculum',
         bio: 'Amit works with our trainers to design and update our curriculum, ensuring it stays relevant to the fast-paced tech industry.',
         avatarUrl: 'https://placehold.co/150x150.png'
+    }
+];
+
+export const placements: Placement[] = [
+    {
+        name: 'Rohan Sharma',
+        quote: 'This course was a game-changer! I landed my dream job at Google just two months after graduating.',
+        company: 'Google',
+        companyLogoUrl: 'https://placehold.co/120x40.png',
+        avatarUrl: 'https://placehold.co/100x100.png'
+    },
+    {
+        name: 'Priya Verma',
+        quote: 'The practical skills I learned were invaluable. The instructors are top-notch.',
+        company: 'Microsoft',
+        companyLogoUrl: 'https://placehold.co/120x40.png',
+        avatarUrl: 'https://placehold.co/100x100.png'
+    },
+    {
+        name: 'Sameer Khan',
+        quote: 'From zero to a certified cloud engineer. The placement support was incredible.',
+        company: 'Amazon',
+        companyLogoUrl: 'https://placehold.co/120x40.png',
+        avatarUrl: 'https://placehold.co/100x100.png'
+    },
+    {
+        name: 'Anjali Mehta',
+        quote: 'The portfolio I built here got me noticed. I now work as a UI/UX designer at a leading startup.',
+        company: 'Swiggy',
+        companyLogoUrl: 'https://placehold.co/120x40.png',
+        avatarUrl: 'https://placehold.co/100x100.png'
     }
 ];
