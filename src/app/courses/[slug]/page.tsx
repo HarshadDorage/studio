@@ -44,6 +44,27 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
     { title: "Introduction to Node.js", content: "Get a basic understanding of server-side logic with Node.js to build more dynamic interfaces.", time: "1.5 hours", icon: Code },
     { title: "Building Your Portfolio", content: "Create a professional portfolio website from scratch to showcase your best work.", time: "4 hours", icon: Briefcase },
   ];
+  
+  const featureCards = [
+      {
+          icon: Brush,
+          title: "UX Tools & Software",
+          description: "Master industry-standard tools like Figma, Adobe XD, and Sketch to bring your ideas to life.",
+          items: ["Figma", "Adobe XD", "Sketch", "InVision", "Miro"]
+      },
+      {
+          icon: Code,
+          title: "Technologies",
+          description: "Learn the code behind the design with essential frontend and backend technologies.",
+          items: ["HTML5/CSS3", "SCSS", "JavaScript", "Node.js", "Git"]
+      },
+      {
+          icon: Layers,
+          title: "Real-World Projects",
+          description: "Build a strong portfolio by working on practical projects that solve real user problems.",
+          items: ["Portfolio Website", "Mobile App Redesign", "E-commerce Platform"]
+      }
+  ];
 
   const reviewsText = course.reviews.map(r => r.comment).join('\n');
 
@@ -70,7 +91,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           </div>
           <div className="mt-8 flex gap-4">
             <Button size="lg">Enroll Now</Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="ghost">
               <Share2 className="mr-2 h-5 w-5" />
               Share
             </Button>
@@ -83,39 +104,23 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           
           {/* Main Content */}
           <main className="lg:col-span-2">
-            {/* Course Summary Info Box */}
-            <Card className="mb-12 shadow-lg border-primary/20">
-              <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-border">
-                <div className="pt-4 md:pt-0">
-                  <h3 className="font-semibold text-lg flex items-center gap-2"><Brush className="text-primary"/>UX Tools & Software</h3>
-                  <ul className="mt-2 space-y-1 text-muted-foreground">
-                    <li>Figma</li>
-                    <li>Adobe XD</li>
-                    <li>Sketch</li>
-                    <li>InVision</li>
-                    <li>Miro</li>
-                  </ul>
+            
+            {/* Feature Cards Grid */}
+            <section className="mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {featureCards.map((card, index) => (
+                         <Card key={index} className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                             <CardHeader className="flex-row items-start gap-4">
+                                <card.icon className="h-8 w-8 text-accent"/>
+                                <CardTitle className="font-headline text-lg mt-1">{card.title}</CardTitle>
+                             </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground">{card.description}</p>
+                            </CardContent>
+                        </Card>
+                    ))}
                 </div>
-                <div className="pt-4 md:pt-0 md:pl-6">
-                  <h3 className="font-semibold text-lg flex items-center gap-2"><Code className="text-primary"/>Technologies</h3>
-                  <ul className="mt-2 space-y-1 text-muted-foreground">
-                    <li>HTML5/CSS3</li>
-                    <li>SCSS</li>
-                    <li>JavaScript</li>
-                    <li>Node.js</li>
-                    <li>Git</li>
-                  </ul>
-                </div>
-                <div className="pt-4 md:pt-0 md:pl-6">
-                  <h3 className="font-semibold text-lg flex items-center gap-2"><Layers className="text-primary"/>Projects</h3>
-                  <ul className="mt-2 space-y-1 text-muted-foreground">
-                    <li>Portfolio Website</li>
-                    <li>Mobile App Redesign</li>
-                    <li>E-commerce Platform</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+            </section>
 
             {/* What you'll learn */}
             <section className="mb-12">
