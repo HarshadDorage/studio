@@ -53,6 +53,10 @@ export function BookmarkProvider({ children }: { children: React.ReactNode }) {
     return bookmarks.some((b) => b.id === courseId);
   };
 
+  if (!isLoaded) {
+    return null;
+  }
+
   return (
     <BookmarkContext.Provider value={{ bookmarks, addBookmark, removeBookmark, isBookmarked }}>
       {children}
