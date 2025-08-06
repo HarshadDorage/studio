@@ -5,6 +5,7 @@ import { courses } from "@/lib/data";
 import { Users, BookOpen, Target } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
+import StartLearningCta from "@/components/start-learning-cta";
 
 const whyChooseUs = [
     {
@@ -96,6 +97,8 @@ export default function Home() {
       </section>
 
       <AlumniGallery />
+
+      <StartLearningCta />
     </div>
   );
 }
