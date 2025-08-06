@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { team } from "@/lib/data";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Target, Eye, Handshake } from "lucide-react";
 import Image from "next/image";
+import TrainerSlider from "@/components/trainer-slider";
 
 const coreValues = [
     {
@@ -87,18 +87,8 @@ export default function AboutPage() {
                            The passionate individuals driving our mission forward.
                         </p>
                     </div>
-                    <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
-                        {team.map((member) => (
-                           <div key={member.name} className="flex flex-col items-center text-center">
-                                <Avatar className="w-32 h-32 mb-4">
-                                    <AvatarImage src={member.avatarUrl} alt={member.name} data-ai-hint="professional headshot" />
-                                    <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                </Avatar>
-                                <h3 className="text-xl font-bold">{member.name}</h3>
-                                <p className="text-primary font-semibold">{member.title}</p>
-                                <p className="mt-2 text-muted-foreground">{member.bio}</p>
-                           </div>
-                        ))}
+                    <div className="mt-16">
+                        <TrainerSlider trainers={team} />
                     </div>
                 </div>
             </section>
