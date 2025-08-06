@@ -8,13 +8,13 @@ body {
 
 @layer base {
   :root {
-    --background: 20 50% 98%; /* Light Apricot */
+    --background: 20 50% 98%;
     --foreground: 20 14% 4.9%;
     --card: 20 50% 98%; 
     --card-foreground: 20 14% 4.9%;
     --popover: 20 50% 98%;
     --popover-foreground: 20 14% 4.9%;
-    --primary: 25 80% 50%; /* Bright Orange */
+    --primary: 22 90% 55%; /* Softer Orange */
     --primary-foreground: 20 0% 100%;
     --secondary: 25 70% 94%;
     --secondary-foreground: 25 80% 20%;
@@ -26,7 +26,7 @@ body {
     --destructive-foreground: 0 0% 98%;
     --border: 25 30% 88%;
     --input: 25 30% 92%;
-    --ring: 25 80% 50%;
+    --ring: 22 90% 55%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -50,7 +50,7 @@ body {
     --card-foreground: 20 50% 98%;
     --popover: 20 14% 4.9%;
     --popover-foreground: 20 50% 98%;
-    --primary: 25 80% 55%;
+    --primary: 22 90% 55%;
     --primary-foreground: 20 14% 4.9%;
     --secondary: 25 50% 15%;
     --secondary-foreground: 20 50% 98%;
