@@ -37,7 +37,7 @@ export default function Header() {
   const { bookmarks } = useBookmarks();
 
   const NavLink = ({ href, label, className, children }: { href: string; label:string; className?: string; children?: React.ReactNode }) => {
-    const isActive = pathname.startsWith(href);
+    const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
     return (
         <Link
             href={href}
@@ -87,7 +87,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left" className="p-0">
                  <div className="flex flex-col h-full">
-                  <div className="p-6">
+                  <div className="p-6 border-b">
                     <Logo />
                   </div>
                   <nav className="mt-2 flex flex-col gap-1 p-4">

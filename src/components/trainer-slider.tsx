@@ -33,7 +33,7 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
 
   return (
     <div
-      className={`flip-card h-96 w-full ${isFlipped ? 'is-flipped' : ''}`}
+      className={`flip-card h-[26rem] w-full ${isFlipped ? 'is-flipped' : ''}`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={handleFlip}
@@ -109,7 +109,7 @@ export default function TrainerSlider({ trainers }: TrainerSliderProps) {
         align: 'start',
         loop: true,
       }}
-      className="w-full max-w-5xl mx-auto"
+      className="w-full max-w-xs sm:max-w-xl md:max-w-5xl mx-auto"
     >
       <CarouselContent className="-ml-4">
         {trainers.map((trainer) => (
@@ -120,8 +120,8 @@ export default function TrainerSlider({ trainers }: TrainerSliderProps) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-[-50px]" />
-      <CarouselNext className="right-[-50px]" />
+      <CarouselPrevious className="left-0 sm:left-[-50px]" />
+      <CarouselNext className="right-0 sm:right-[-50px]" />
     </Carousel>
   );
 }

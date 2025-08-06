@@ -7,7 +7,7 @@ export default function Logo() {
         width="250"
         height="60"
         viewBox="0 0 300 70"
-        className="w-auto h-10"
+        className="w-auto h-8 md:h-10"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>

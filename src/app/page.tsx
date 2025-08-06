@@ -35,14 +35,14 @@ export default function Home() {
         
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
+            <div className="max-w-xl text-center md:text-left">
               <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl font-headline">
                 Unlock Your Tech Potential with Samarthview
               </h1>
               <p className="mt-6 text-lg leading-8 text-foreground/80">
                 Empowering India's next generation of tech leaders through world-class training and mentorship.
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row items-center sm:items-center gap-4 justify-center md:justify-start">
                 <Button asChild size="lg">
                   <Link href="/courses">Explore Courses <ArrowRight className="ml-2" /></Link>
                 </Button>
@@ -85,8 +85,8 @@ export default function Home() {
       </section>
 
       <section id="courses" className="py-16 sm:py-24 bg-primary/5">
-        <div className="container mx-auto">
-          <div className="text-center px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Featured Courses</h2>
             <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
               Jumpstart your career with our industry-focused training programs.
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="mt-16">
             <CourseCarousel courses={courses.slice(0, 4)} />
           </div>
-           <div className="text-center mt-12 px-4 md:px-6">
+           <div className="text-center mt-12">
             <Button asChild variant="outline" size="lg">
               <Link href="/courses">View All Courses</Link>
             </Button>

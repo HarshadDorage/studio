@@ -4,6 +4,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Star } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
+import React from 'react';
 
 interface CourseCarouselProps {
     courses: Course[];
@@ -19,8 +22,8 @@ const CarouselCard = ({ course }: { course: Course }) => {
     const avgRating = getAverageRating(course.reviews);
 
     return (
-        <Card className="min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-2">
-            <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+        <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-2">
+            <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col bg-card">
                 <Link href={`/courses/${course.slug}`} className="block h-full">
                     <div className="relative w-full h-48">
                         <Image
@@ -52,18 +55,28 @@ const CarouselCard = ({ course }: { course: Course }) => {
                     </CardContent>
                 </Link>
             </div>
-        </Card>
+        </CarouselItem>
     );
 };
 
 export default function CourseCarousel({ courses }: CourseCarouselProps) {
+     const plugin = React.useRef(
+      Autoplay({ delay: 5000, stopOnInteraction: true })
+    );
     return (
-        <div className="relative">
-            <div className="flex overflow-x-auto snap-x snap-mandatory scroll-p-4 pb-4 -m-2">
+        <Carousel 
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+        >
+            <CarouselContent className="-ml-2">
                 {courses.map(course => (
                     <CarouselCard key={course.id} course={course} />
                 ))}
-            </div>
-        </div>
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+        </Carousel>
     );
 }

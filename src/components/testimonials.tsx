@@ -26,13 +26,13 @@ export default function Testimonials({ reviews }: TestimonialsProps) {
                 align: "start",
                 loop: true,
             }}
-            className="w-full max-w-4xl mx-auto testimonial-carousel"
+            className="w-full max-w-xs sm:max-w-xl md:max-w-4xl mx-auto testimonial-carousel"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
         >
             <CarouselContent className="-ml-4">
                 {reviews.map((review, index) => (
-                    <CarouselItem key={`${review.id}-${index}`} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={`${review.id}-${index}`} className="pl-4 sm:basis-1/2 lg:basis-1/3">
                          <div className="p-1 h-full">
                             <Card className="h-full flex flex-col text-center border-accent/50 shadow-lg hover:shadow-accent/20 transition-all duration-300">
                                 <CardContent className="p-6 flex flex-col items-center flex-grow">
@@ -54,8 +54,8 @@ export default function Testimonials({ reviews }: TestimonialsProps) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious className="left-[-50px]" />
-            <CarouselNext className="right-[-50px]" />
+            <CarouselPrevious className="left-0 sm:left-[-50px]" />
+            <CarouselNext className="right-0 sm:right-[-50px]" />
         </Carousel>
     );
 }
