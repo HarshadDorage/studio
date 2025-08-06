@@ -19,8 +19,8 @@ export default function Testimonials({ reviews }: TestimonialsProps) {
             className="w-full max-w-4xl mx-auto"
         >
             <CarouselContent>
-                {reviews.map((review) => (
-                    <CarouselItem key={review.id} className="md:basis-1/2 lg:basis-1/3">
+                {reviews.map((review, index) => (
+                    <CarouselItem key={`${review.id}-${index}`} className="md:basis-1/2 lg:basis-1/3">
                          <div className="p-1 h-full">
                             <Card className="h-full flex flex-col justify-between shadow-md">
                                 <CardContent className="p-6 space-y-4">
