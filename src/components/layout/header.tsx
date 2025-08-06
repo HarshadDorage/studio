@@ -1,12 +1,13 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, Bookmark } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
+import { useBookmarks } from '@/context/bookmark-context';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -17,6 +18,7 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const { bookmarks } = useBookmarks();
 
   const NavLink = ({ href, label }: { href: string; label: string }) => {
     const isActive = pathname === href;
@@ -44,6 +46,20 @@ export default function Header() {
             {navLinks.map((link) => (
               <NavLink key={link.href} {...link} />
             ))}
+             <Link
+                href="/bookmarks"
+                className={cn(
+                'text-sm font-medium transition-colors hover:text-primary relative',
+                pathname === '/bookmarks' ? 'text-primary' : 'text-muted-foreground'
+                )}
+            >
+                Bookmarks
+                {bookmarks.length > 0 && (
+                    <span className="absolute -top-1 -right-3 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
+                        {bookmarks.length}
+                    </span>
+                )}
+            </Link>
           </nav>
         </div>
 
@@ -72,6 +88,15 @@ export default function Header() {
                           {link.label}
                         </Link>
                     ))}
+                    <Link
+                        href="/bookmarks"
+                        className={cn(
+                        'text-lg font-medium transition-colors hover:text-primary relative',
+                        pathname === '/bookmarks' ? 'text-primary' : 'text-foreground'
+                        )}
+                    >
+                        Bookmarks
+                    </Link>
                   </nav>
                 </div>
               </SheetContent>
