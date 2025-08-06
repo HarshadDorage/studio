@@ -1,4 +1,4 @@
-import type { Course, TeamMember, Placement } from '@/types';
+import type { Course, TeamMember, Placement, Notification } from '@/types';
 
 export const trainers = {
   ananyaSharma: {
@@ -170,3 +170,33 @@ export const placements: Placement[] = [
         avatarUrl: 'https://placehold.co/100x100.png'
     }
 ];
+
+export const notifications: Notification[] = [
+    {
+        id: 1,
+        title: "New Webinar: Future of UX",
+        description: "Join our live webinar with Ananya Sharma.",
+        timestamp: "2 hours ago",
+        type: "webinar",
+        link: "/courses/advanced-ui-ux-design",
+        read: false,
+    },
+    {
+        id: 2,
+        title: "Assignment Due",
+        description: "Your DevOps project submission is due tomorrow.",
+        timestamp: "1 day ago",
+        type: "reminder",
+        link: "/courses/devops-engineering-pro",
+        read: false,
+    },
+    {
+        id: 3,
+        title: "Python Course Updated",
+        description: "Module 5 has been updated with new content on deployment.",
+        timestamp: "3 days ago",
+        type: "update",
+        link: "/courses/full-stack-python-development",
+        read: true,
+    }
+]

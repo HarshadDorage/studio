@@ -41,3 +41,13 @@ export interface Placement {
     companyLogoUrl: string;
     avatarUrl: string;
 }
+
+export interface Notification {
+  id: number;
+  title: string;
+  description: string;
+  timestamp: string;
+  type: 'webinar' | 'reminder' | 'update';
+  link: string;
+  read: boolean;
+}

@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { useBookmarks } from '@/context/bookmark-context';
+import NotificationBell from './notification-bell';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -106,6 +107,7 @@ export default function Header() {
             <Logo />
           </div>
           <div className="flex items-center gap-2">
+            <NotificationBell />
              <Button asChild>
                 <Link href="/contact">Get In Touch</Link>
             </Button>
