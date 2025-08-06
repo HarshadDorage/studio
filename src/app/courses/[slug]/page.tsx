@@ -71,7 +71,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   return (
     <div className="bg-background font-sans">
       {/* Header Section */}
-      <header className="bg-secondary text-primary py-12 md:py-20">
+      <header className="relative bg-secondary text-primary py-12 md:py-20 overflow-hidden">
+        <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
+        <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
         <div className="container mx-auto px-4 md:px-6">
           <h1 className="text-3xl md:text-5xl font-bold font-headline">UX/UI Designer Master Class</h1>
           <p className="mt-2 text-lg md:text-xl text-primary/80">Figma, Adobe Creative Suite, HTML/HTML5/CSS/CSS3/SCSS/Node.js + more</p>
