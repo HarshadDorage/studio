@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import WhatsAppButton from '@/components/layout/whatsapp-button';
+import AnnouncementBanner from '@/components/layout/announcement-banner';
 
 export const metadata: Metadata = {
   title: 'Samarthview Technologies - Unlock Your Tech Potential',
@@ -24,6 +25,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <div className="flex min-h-screen flex-col">
+          <AnnouncementBanner />
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
