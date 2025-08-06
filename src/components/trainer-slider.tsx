@@ -52,7 +52,7 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
                     .join('')}
                 </AvatarFallback>
               </Avatar>
-              <h3 className="text-2xl font-bold text-primary font-headline" style={{ color: 'hsl(255, 69%, 40%)' }}>
+              <h3 className="text-2xl font-bold text-primary font-headline">
                 {trainer.name}
               </h3>
               <p className="text-base text-muted-foreground">{trainer.title}</p>
@@ -61,13 +61,13 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
         </div>
 
         {/* Back of the card */}
-        <div className="flip-card-back p-6 text-white" style={{ backgroundColor: 'hsl(35, 100%, 50%)' }}>
+        <div className="flip-card-back p-6 text-primary-foreground" style={{ backgroundColor: 'hsl(var(--primary))' }}>
           <div className="flex h-full flex-col justify-between">
             <div>
-              <h4 className="mb-2 text-xl font-bold font-headline" style={{ color: 'hsl(255, 69%, 40%)' }}>About Me</h4>
+              <h4 className="mb-2 text-xl font-bold font-headline text-primary-foreground">About Me</h4>
               <p className="mb-4 text-sm">{trainer.bio}</p>
               
-              <h4 className="mb-2 text-xl font-bold font-headline" style={{ color: 'hsl(255, 69%, 40%)' }}>Courses</h4>
+              <h4 className="mb-2 text-xl font-bold font-headline text-primary-foreground">Courses</h4>
               <div className="mb-4 flex flex-wrap gap-2">
                 {trainer.coursesTaught?.map((course) => (
                   <span key={course} className="rounded-full bg-white/20 px-3 py-1 text-xs">
