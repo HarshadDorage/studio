@@ -25,7 +25,7 @@ const coreValues = [
 export default function AboutPage() {
     return (
         <>
-            <section className="relative py-20 md:py-32 bg-primary/10 text-primary">
+            <section className="relative py-20 md:py-32 bg-secondary text-primary">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">About Samarthview Technologies</h1>
                     <p className="mt-4 text-lg max-w-3xl mx-auto text-primary/80">

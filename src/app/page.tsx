@@ -29,7 +29,7 @@ const whyChooseUs = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative w-full py-20 md:py-32 lg:py-40 bg-primary/5 overflow-hidden">
+      <section className="relative w-full py-20 md:py-32 lg:py-40 bg-secondary overflow-hidden">
         <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
         
