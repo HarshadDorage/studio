@@ -2,21 +2,68 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp, Award, Briefcase } from "lucide-react";
 import AlumniGallery from "@/components/alumni-gallery";
 import { companyLogos, placementAssistance } from "@/lib/data";
+
+const placementStats = [
+    {
+        icon: Award,
+        value: "95%",
+        label: "Placement Rate",
+    },
+    {
+        icon: TrendingUp,
+        value: "50%",
+        label: "Average Salary Hike",
+    },
+     {
+        icon: Briefcase,
+        value: "200+",
+        label: "Hiring Partners",
+    }
+]
+
 
 export default function PlacementsPage() {
     return (
         <>
-            <section className="relative bg-secondary text-primary py-20 md:py-28 overflow-hidden">
-                 <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
+            <section className="relative bg-secondary text-primary pt-20 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+                <div className="absolute inset-0 bg-primary/5"></div>
+                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
                 <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">Your Career, Our Commitment</h1>
-                    <p className="mt-4 text-lg max-w-3xl mx-auto text-primary/80">
-                        We are dedicated to helping our students launch successful careers in the tech industry through comprehensive placement support.
-                    </p>
+                
+                <div className="container mx-auto px-4 md:px-6 relative">
+                   <div className="grid md:grid-cols-2 gap-8 items-center">
+                        <div className="text-center md:text-left">
+                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline">Launch Your Tech Career With Confidence</h1>
+                            <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-primary/80">
+                                We don't just teach you skills; we pave the way for your success in the tech industry. Your dream job is within reach.
+                            </p>
+                            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                <Button size="lg" asChild>
+                                    <Link href="/courses">Explore Courses</Link>
+                                </Button>
+                                 <Button size="lg" variant="outline" asChild>
+                                    <Link href="/contact">Speak to an Advisor</Link>
+                                </Button>
+                            </div>
+                        </div>
+                        <div className="hidden md:block">
+                            <Image src="https://placehold.co/600x400.png" alt="Students celebrating success" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="successful students celebrating" />
+                        </div>
+                   </div>
+                </div>
+                 <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-24">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                        {placementStats.map((stat) => (
+                             <div key={stat.label} className="bg-background/50 p-6 rounded-lg shadow-md border border-primary/10">
+                                <stat.icon className="h-10 w-10 text-accent mx-auto mb-4" />
+                                <div className="text-4xl font-bold text-primary">{stat.value}</div>
+                                <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </section>
 
