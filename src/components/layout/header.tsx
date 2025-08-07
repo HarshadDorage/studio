@@ -1,7 +1,8 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Bookmark, BookCopy, ChevronDown, Building2, Info, Mail } from 'lucide-react';
+import { Menu, Bookmark, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,10 +23,6 @@ const navLinks = [
   { 
     href: '/courses', 
     label: 'Courses',
-    submenu: courses.map(course => ({
-        href: `/courses/${course.slug}`,
-        label: course.title,
-    }))
   },
   { href: '/placements', label: 'Placements' },
   { href: '/about', label: 'About Us' },
@@ -69,6 +66,21 @@ export default function Header() {
     );
   };
 
+  const SubmenuMobile = ({ label, submenu, onLinkClick }: { label: string; submenu: { href: string; label: string }[]; onLinkClick: () => void }) => {
+    return (
+      <div className="space-y-1">
+        <span className="px-3 py-2 text-base font-medium text-muted-foreground">{label}</span>
+        <div className='ml-4 space-y-1'>
+          {submenu.map(sublink => (
+            <SheetClose asChild key={sublink.href}>
+              <MobileNavLink href={sublink.href} label={sublink.label} onLinkClick={onLinkClick} />
+            </SheetClose>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -92,24 +104,9 @@ export default function Header() {
                   </div>
                   <nav className="mt-2 flex flex-col gap-1 p-4">
                     {navLinks.map((link) => (
-                       <div key={link.href}>
-                        {link.submenu ? (
-                            <div className="space-y-1">
-                                <span className="px-3 py-2 text-base font-medium text-muted-foreground">{link.label}</span>
-                                <div className='ml-4 space-y-1'>
-                                {link.submenu.map(sublink => (
-                                    <SheetClose asChild key={sublink.href}>
-                                        <MobileNavLink href={sublink.href} label={sublink.label} onLinkClick={() => {}} />
-                                    </SheetClose>
-                                ))}
-                                </div>
-                            </div>
-                        ) : (
-                            <SheetClose asChild>
-                                <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
-                            </SheetClose>
-                        )}
-                        </div>
+                      <SheetClose asChild key={link.href}>
+                          <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
+                      </SheetClose>
                     ))}
                      <SheetClose asChild>
                       <Link
@@ -136,24 +133,7 @@ export default function Header() {
           <div className="hidden md:flex flex-1 items-center justify-center space-x-6">
             <nav className="flex items-center space-x-6">
               {navLinks.map((link) => (
-                link.submenu ? (
-                    <DropdownMenu key={link.href}>
-                        <DropdownMenuTrigger asChild>
-                             <NavLink href={link.href} label={link.label}>
-                                <ChevronDown className="ml-1 h-4 w-4" />
-                             </NavLink>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-56" align="start">
-                            {link.submenu.map(sublink => (
-                                <DropdownMenuItem key={sublink.href} asChild>
-                                    <Link href={sublink.href}>{sublink.label}</Link>
-                                </DropdownMenuItem>
-                            ))}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                ) : (
-                    <NavLink key={link.href} {...link} />
-                )
+                <NavLink key={link.href} {...link} />
               ))}
                <Link
                   href="/bookmarks"
