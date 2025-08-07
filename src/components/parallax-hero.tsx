@@ -36,7 +36,7 @@ export default function ParallaxHero() {
                 <Button asChild size="lg">
                     <Link href="/courses">Explore Courses <ArrowRight className="ml-2" /></Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-primary hover:text-primary-foreground">
                     <Link href="/contact">Book a Demo <Calendar className="ml-2" /></Link>
                 </Button>
             </div>
