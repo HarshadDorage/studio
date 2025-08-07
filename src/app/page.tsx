@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { courses } from "@/lib/data";
-import { Users, BookOpen, Target, ArrowRight } from "lucide-react";
+import { Users, BookOpen, Target, ArrowRight, Briefcase, FileText, Award } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
 import StartLearningCta from "@/components/start-learning-cta";
@@ -11,19 +11,24 @@ import ParallaxHero from "@/components/parallax-hero";
 
 const whyChooseUs = [
     {
+        icon: FileText,
+        title: "Resume Building",
+        description: "Craft a standout resume with personalized feedback from our career experts."
+    },
+    {
         icon: Users,
-        title: "Expert Trainers",
-        description: "Learn from industry veterans with years of real-world experience in their fields."
+        title: "Expert Mentorship",
+        description: "Get guidance from industry veterans who have been in your shoes and succeeded."
     },
     {
-        icon: BookOpen,
-        title: "Practical Syllabus",
-        description: "Our curriculum is designed to be hands-on, focusing on skills that employers are looking for."
+        icon: Briefcase,
+        title: "Exclusive Job Fairs",
+        description: "Gain access to our network of top hiring partners at exclusive recruitment events."
     },
     {
-        icon: Target,
-        title: "Career Support",
-        description: "We provide placement assistance, resume building, and interview preparation."
+        icon: Award,
+        title: "Real-World Projects",
+        description: "Build a portfolio that impresses employers with hands-on, industry-relevant projects."
     }
 ]
 
@@ -40,7 +45,7 @@ export default function Home() {
                     We are dedicated to providing the best learning experience to help you succeed in your tech career.
                 </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 animate-in fade-in-50 slide-in-from-bottom-10 duration-500">
                 {whyChooseUs.map((item) => (
                     <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2">
                         <CardHeader className="items-center">
