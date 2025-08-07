@@ -4,7 +4,6 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import WhatsAppButton from '@/components/layout/whatsapp-button';
-import AnnouncementBanner from '@/components/layout/announcement-banner';
 import { BookmarkProvider } from '@/context/bookmark-context';
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <BookmarkProvider>
           <div className="flex min-h-screen flex-col">
-            <AnnouncementBanner />
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />
