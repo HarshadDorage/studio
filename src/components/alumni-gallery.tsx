@@ -15,7 +15,7 @@ export default function AlumniGallery() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {placements.map((placement) => (
-                        <Card key={placement.name} className="overflow-hidden text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <Card key={placement.name} className="overflow-hidden text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border hover:border-accent/50">
                             <CardContent className="p-6 flex flex-col items-center">
                                 <Avatar className="w-24 h-24 mb-4 border-4 border-primary/10">
                                     <AvatarImage src={placement.avatarUrl} alt={placement.name} data-ai-hint="student headshot" />

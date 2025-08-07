@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Briefcase, FileText, Users, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import AlumniGallery from "@/components/alumni-gallery";
 import { companyLogos, placementAssistance } from "@/lib/data";
 
@@ -28,12 +28,14 @@ export default function PlacementsPage() {
                             We have a strong network of hiring partners, from top MNCs to innovative startups.
                         </p>
                     </div>
-                    <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                        {companyLogos.map((company) => (
-                            <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300">
-                                <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
-                            </div>
-                        ))}
+                    <div className="mt-16 bg-primary/5 border rounded-lg p-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                            {companyLogos.map((company) => (
+                                <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                                    <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -50,7 +52,7 @@ export default function PlacementsPage() {
                     </div>
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {placementAssistance.map((item) => (
-                            <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2">
                                 <CardHeader className="items-center">
                                     <div className="bg-primary/10 p-4 rounded-full">
                                         <item.icon className="h-8 w-8 text-primary" />
@@ -68,7 +70,7 @@ export default function PlacementsPage() {
             
             <section className="py-16 sm:py-24">
                  <div className="container mx-auto px-4 md:px-6">
-                    <Card className="bg-secondary text-primary shadow-2xl overflow-hidden">
+                    <Card className="bg-secondary text-primary shadow-2xl overflow-hidden border-primary/20">
                         <div className="grid md:grid-cols-2 items-center">
                             <div className="p-8 md:p-12">
                                 <h2 className="text-3xl font-bold font-headline">Internship Opportunities</h2>
@@ -84,9 +86,10 @@ export default function PlacementsPage() {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="hidden md:block h-full w-full relative">
-                                <Image src="https://placehold.co/600x400.png" alt="Intern working at a desk" className="h-full w-full object-cover" width={600} height={400} data-ai-hint="student intern working" />
-                            </div>
+                           <div className="hidden md:block h-full w-full bg-primary/10 relative">
+                             <div className="absolute inset-0 bg-gradient-to-l from-secondary via-secondary/50 to-transparent"></div>
+                             <Image src="https://placehold.co/600x400.png" alt="Intern working at a desk" className="h-full w-full object-cover" width={600} height={400} data-ai-hint="student intern working" />
+                           </div>
                         </div>
                     </Card>
                 </div>
