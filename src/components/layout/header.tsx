@@ -1,4 +1,5 @@
 
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -135,21 +136,6 @@ export default function Header() {
               {navLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
               ))}
-               <Link
-                  href="/bookmarks"
-                  className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary relative flex items-center',
-                  pathname === '/bookmarks' ? 'text-primary' : 'text-muted-foreground'
-                  )}
-              >
-                  <Bookmark className="mr-1 h-4 w-4" />
-                  Bookmarks
-                  {bookmarks.length > 0 && (
-                      <span className="absolute -top-2 -right-3 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
-                          {bookmarks.length}
-                      </span>
-                  )}
-              </Link>
             </nav>
           </div>
         </div>
@@ -160,6 +146,17 @@ export default function Header() {
                  <Logo />
               </div>
           </div>
+          <Button asChild variant="ghost" size="icon" className="relative">
+            <Link href="/bookmarks">
+              <Bookmark className="h-6 w-6" />
+              {bookmarks.length > 0 && (
+                <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
+                  {bookmarks.length}
+                </span>
+              )}
+              <span className="sr-only">Bookmarks</span>
+            </Link>
+          </Button>
           <NotificationBell />
            <Button asChild className="hidden sm:inline-flex">
               <Link href="/contact">Get In Touch</Link>
