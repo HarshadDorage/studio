@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { courses } from "@/lib/data";
+import { courses, companyLogos } from "@/lib/data";
 import { Users, BookOpen, Target, ArrowRight, Briefcase, FileText, Award } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
@@ -81,6 +81,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+       <section className="py-16 sm:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Graduates Work At</h2>
+                        <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                            We have a strong network of hiring partners, from top MNCs to innovative startups.
+                        </p>
+                    </div>
+                    <div className="mt-16 bg-primary/5 border rounded-lg p-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                            {companyLogos.map((company) => (
+                                <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                                    <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
 
       <AlumniGallery />
 
