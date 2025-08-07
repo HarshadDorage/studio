@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ParallaxHero() {
@@ -26,7 +26,7 @@ export default function ParallaxHero() {
       <div className="absolute inset-0 z-10 bg-black/50" />
       <div className="relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
         <div className="container mx-auto px-4 md:px-6">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl font-headline">
                 Unlock Your Tech Potential with Samarthview
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-white/90">
@@ -37,7 +37,7 @@ export default function ParallaxHero() {
                     <Link href="/courses">Explore Courses <ArrowRight className="ml-2" /></Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-                    <Link href="/contact">Contact Us</Link>
+                    <Link href="/contact">Book a Demo <Calendar className="ml-2" /></Link>
                 </Button>
             </div>
         </div>
