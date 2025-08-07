@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
-import CourseCard from "@/components/course-card";
 import { courses } from "@/lib/data";
 import Link from "next/link";
+import CourseCarousel from "@/components/course-carousel";
 
 export default function CoursesPage() {
   return (
@@ -17,11 +18,7 @@ export default function CoursesPage() {
         </div>
       </section>
       <div className="container mx-auto px-4 md:px-6 py-16">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {courses.map((course) => (
-            <CourseCard key={course.id} course={course} />
-          ))}
-        </div>
+        <CourseCarousel courses={courses} />
       </div>
     </>
   );

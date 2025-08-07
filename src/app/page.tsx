@@ -1,38 +1,23 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { courses, companyLogos } from "@/lib/data";
-import { Users, BookOpen, Target, ArrowRight, Briefcase, FileText, Award } from "lucide-react";
+import { courses, companyLogos, whyChooseUs } from "@/lib/data";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
 import StartLearningCta from "@/components/start-learning-cta";
 import CourseCarousel from "@/components/course-carousel";
 import Image from "next/image";
 import ParallaxHero from "@/components/parallax-hero";
-
-const whyChooseUs = [
-    {
-        icon: FileText,
-        title: "Resume Building",
-        description: "Craft a standout resume with personalized feedback from our career experts."
-    },
-    {
-        icon: Users,
-        title: "Expert Mentorship",
-        description: "Get guidance from industry veterans who have been in your shoes and succeeded."
-    },
-    {
-        icon: Briefcase,
-        title: "Exclusive Job Fairs",
-        description: "Gain access to our network of top hiring partners at exclusive recruitment events."
-    },
-    {
-        icon: Award,
-        title: "Real-World Projects",
-        description: "Build a portfolio that impresses employers with hands-on, industry-relevant projects."
-    }
-]
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import React from "react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Home() {
+    const plugin = React.useRef(
+      Autoplay({ delay: 5000, stopOnInteraction: true })
+    );
+
   return (
     <div className="flex flex-col">
       <ParallaxHero />
@@ -45,21 +30,34 @@ export default function Home() {
                     We are dedicated to providing the best learning experience to help you succeed in your tech career.
                 </p>
             </div>
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 animate-in fade-in-50 slide-in-from-bottom-10 duration-500">
-                {whyChooseUs.map((item) => (
-                    <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2">
-                        <CardHeader className="items-center">
-                            <div className="bg-primary/10 p-4 rounded-full">
-                                <item.icon className="h-8 w-8 text-primary" />
+            <Carousel 
+                plugins={[plugin.current]}
+                className="w-full max-w-xs sm:max-w-xl md:max-w-5xl lg:max-w-6xl mx-auto mt-16"
+                onMouseEnter={plugin.current.stop}
+                onMouseLeave={plugin.current.reset}
+            >
+                <CarouselContent className="-ml-4">
+                    {whyChooseUs.map((item) => (
+                        <CarouselItem key={item.title} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                             <div className="p-1 h-full">
+                                <Card className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2 h-full">
+                                    <CardHeader className="items-center">
+                                        <div className="bg-primary/10 p-4 rounded-full">
+                                            <item.icon className="h-8 w-8 text-primary" />
+                                        </div>
+                                        <CardTitle className="mt-4 font-headline">{item.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-muted-foreground">{item.description}</p>
+                                    </CardContent>
+                                </Card>
                             </div>
-                            <CardTitle className="mt-4 font-headline">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+            </Carousel>
         </div>
       </section>
 

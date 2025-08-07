@@ -1,6 +1,6 @@
 
 import type { Course, TeamMember, Placement, Notification } from '@/types';
-import { Briefcase, FileText, Users, Award, Linkedin, Twitter, Dribbble } from 'lucide-react';
+import { Briefcase, FileText, Users, Award, Linkedin, Twitter, Dribbble, HeartHandshake, Code, TrendingUp, Target } from 'lucide-react';
 
 export const trainers = {
   ananyaSharma: {
@@ -247,4 +247,27 @@ export const notifications: Notification[] = [
         link: "/courses/full-stack-python-development",
         read: true,
     }
-]
+];
+
+export const whyChooseUs = [
+    {
+        icon: FileText,
+        title: "Resume Building",
+        description: "Craft a standout resume that gets noticed by top recruiters."
+    },
+    {
+        icon: HeartHandshake,
+        title: "Expert Mentorship",
+        description: "Get personalized guidance and support from industry veterans."
+    },
+    {
+        icon: Briefcase,
+        title: "Exclusive Job Fairs",
+        description: "Connect directly with our network of leading hiring partners."
+    },
+     {
+        icon: Code,
+        title: "Real-World Projects",
+        description: "Build a strong portfolio by working on industry-relevant projects."
+    },
+];
