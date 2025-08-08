@@ -29,7 +29,6 @@ const navLinks = [
       label: course.title,
     })),
   },
-  { href: '/placements', label: 'Placements' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
 ];
