@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { team } from "@/lib/data";
 import { Target, Eye, Handshake } from "lucide-react";
@@ -30,7 +31,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">About Samarthview Technologies</h1>
-                    <p className="mt-4 text-lg max-w-3xl mx-auto text-primary/80">
+                    <p className="mt-4 text-lg max-w-3xl mx-auto">
                         We are on a mission to empower India's tech talent through accessible, high-quality education and mentorship.
                     </p>
                 </div>
@@ -40,11 +41,11 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl font-bold tracking-tight text-primary font-headline">Our Story</h2>
-                            <p className="mt-4 text-muted-foreground">
+                            <h2 className="text-3xl font-bold tracking-tight font-headline text-[#1A1A1A]">Our Story</h2>
+                            <p className="mt-4">
                                 Samarthview Technologies was founded with a simple yet powerful vision: to bridge the gap between academic education and the skills demanded by the fast-evolving tech industry. We saw a nation brimming with potential but lacking the right platforms for practical, industry-relevant training.
                             </p>
-                            <p className="mt-4 text-muted-foreground">
+                            <p className="mt-4">
                                 From our humble beginnings, we have grown into a leading tech training institute, dedicated to creating a generation of skilled professionals ready to lead and innovate. Our approach combines a hands-on curriculum, expert mentorship, and robust career support to ensure our students don't just learn, but thrive.
                             </p>
                         </div>
@@ -58,8 +59,8 @@ export default function AboutPage() {
             <section className="py-16 sm:py-24 bg-primary/5">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Core Values</h2>
-                        <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-[#1A1A1A]">Our Core Values</h2>
+                        <p className="mt-4 text-lg max-w-2xl mx-auto">
                            The principles that guide our mission and define our culture.
                         </p>
                     </div>
@@ -84,8 +85,8 @@ export default function AboutPage() {
             <section className="py-16 sm:py-24">
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Meet Our Leadership</h2>
-                         <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-[#1A1A1A]">Meet Our Leadership</h2>
+                         <p className="mt-4 text-lg max-w-2xl mx-auto">
                            The passionate individuals driving our mission forward.
                         </p>
                     </div>
