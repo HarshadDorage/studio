@@ -127,7 +127,7 @@ export default function Header() {
                   <DropdownMenu key={link.href} open={isCoursesMenuOpen} onOpenChange={setIsCoursesMenuOpen}>
                     <div onMouseEnter={() => setIsCoursesMenuOpen(true)} onMouseLeave={() => setIsCoursesMenuOpen(false)}>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" className={cn('flex items-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0', pathname.startsWith('/courses') ? 'text-primary' : 'text-muted-foreground', 'hover:bg-transparent')}>
+                        <Button variant="ghost" className={cn('flex items-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0 p-0', pathname.startsWith('/courses') ? 'text-primary' : 'text-muted-foreground', 'hover:bg-transparent hover:text-accent')}>
                           {link.label}
                           <ChevronDown className={cn("relative top-[1px] ml-1 h-3 w-3 transition duration-200", isCoursesMenuOpen && "rotate-180")} />
                         </Button>
