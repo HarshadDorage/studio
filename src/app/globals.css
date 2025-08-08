@@ -7,6 +7,12 @@ body {
 }
 
 @layer base {
+  h1 {
+    color: #1A1A1A;
+  }
+  p {
+    color: #696969;
+  }
   :root {
     --background: 220 13% 97%; /* Ivory: #FAF9F6 */
     --foreground: 0 0% 10%;
