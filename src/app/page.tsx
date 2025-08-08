@@ -81,8 +81,8 @@ export default function Home() {
       <section id="why-us" className="py-16 sm:py-24">
         <div className="container mx-auto px-4 md:px-6">
             <div className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Why Choose Samarthview?</h2>
-                <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Why Choose Samarthview?</h2>
+                <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
                     We are dedicated to providing the best learning experience to help you succeed in your tech career.
                 </p>
             </div>
@@ -120,8 +120,8 @@ export default function Home() {
       <section id="courses" className="py-16 sm:py-24 bg-primary/5">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Featured Courses</h2>
-            <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
+            <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
               Jumpstart your career with our industry-focused training programs.
             </p>
           </div>
@@ -139,8 +139,8 @@ export default function Home() {
        <section className="py-16 sm:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Graduates Work At</h2>
-                        <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Graduates Work At</h2>
+                        <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
                             We have a strong network of hiring partners, from top MNCs to innovative startups.
                         </p>
                     </div>
