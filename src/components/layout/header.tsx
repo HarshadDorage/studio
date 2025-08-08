@@ -17,6 +17,7 @@ import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { useBookmarks } from '@/context/bookmark-context';
 import { courses } from '@/lib/data';
+import React from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -36,6 +37,7 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const { bookmarks } = useBookmarks();
+  const [isCoursesMenuOpen, setIsCoursesMenuOpen] = React.useState(false);
 
   const NavLink = ({ href, label, className, children }: { href: string; label:string; className?: string; children?: React.ReactNode }) => {
     const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
@@ -122,20 +124,22 @@ export default function Header() {
             <nav className="flex items-center space-x-6">
               {navLinks.map((link) => (
                 link.submenu ? (
-                  <DropdownMenu key={link.href}>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" className={cn('flex items-center text-sm font-medium transition-colors hover:text-accent', pathname.startsWith('/courses') ? 'text-primary' : 'text-muted-foreground')}>
-                        {link.label}
-                        <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      {link.submenu.map((sublink) => (
-                        <DropdownMenuItem key={sublink.href} asChild>
-                          <Link href={sublink.href}>{sublink.label}</Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
+                  <DropdownMenu key={link.href} open={isCoursesMenuOpen} onOpenChange={setIsCoursesMenuOpen}>
+                    <div onMouseEnter={() => setIsCoursesMenuOpen(true)} onMouseLeave={() => setIsCoursesMenuOpen(false)}>
+                      <DropdownMenuTrigger asChild>
+                        <Button variant="ghost" className={cn('flex items-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0', pathname.startsWith('/courses') ? 'text-primary' : 'text-muted-foreground', 'hover:bg-transparent')}>
+                          {link.label}
+                          <ChevronDown className={cn("relative top-[1px] ml-1 h-3 w-3 transition duration-200", isCoursesMenuOpen && "rotate-180")} />
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent onMouseEnter={() => setIsCoursesMenuOpen(true)} onMouseLeave={() => setIsCoursesMenuOpen(false)}>
+                        {link.submenu.map((sublink) => (
+                          <DropdownMenuItem key={sublink.href} asChild>
+                            <Link href={sublink.href}>{sublink.label}</Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </div>
                   </DropdownMenu>
                 ) : (
                   <NavLink key={link.href} {...link} />
