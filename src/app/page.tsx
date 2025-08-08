@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from "@/components/ui/button";
@@ -127,11 +128,6 @@ export default function Home() {
           </div>
           <div className="mt-16">
             <CourseCarousel courses={courses.slice(0, 3)} />
-          </div>
-           <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/courses">View All Courses</Link>
-            </Button>
           </div>
         </div>
       </section>
