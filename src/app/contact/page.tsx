@@ -172,14 +172,14 @@ export default function ContactPage() {
                 </Card>
             </div>
             
-            <div>
+            <div className="flex flex-col">
                  <h2 className="text-3xl font-bold text-center mb-8 font-headline text-primary">Our Location</h2>
-                 <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border">
+                 <div className="flex-grow w-full rounded-lg overflow-hidden shadow-2xl border">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.58334812489!2d77.62472931526487!3d12.93448999088019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc6d%3A0x5462537842603ae1!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1689243763268!5m2!1sen!2sin"
                         width="100%"
                         height="100%"
-                        style={{ border: 0 }}
+                        style={{ border: 0, minHeight: '400px' }}
                         allowFullScreen={true}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
