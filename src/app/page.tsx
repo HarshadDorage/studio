@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       <section id="courses" className="py-16 sm:py-24 bg-primary/5">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
             <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-16">
-            <CourseCarousel courses={courses.slice(0, 4)} />
+            <CourseCarousel courses={courses.slice(0, 3)} />
           </div>
            <div className="text-center mt-12">
             <Button asChild variant="outline" size="lg">
