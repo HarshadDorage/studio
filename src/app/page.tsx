@@ -133,24 +133,28 @@ export default function Home() {
       </section>
 
        <section className="py-16 sm:py-24">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Graduates Work At</h2>
-                        <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
-                            We have a strong network of hiring partners, from top MNCs to innovative startups.
-                        </p>
-                    </div>
-                    <div className="mt-16 bg-primary/5 border rounded-lg p-8">
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                            {companyLogos.map((company) => (
-                                <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                                    <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
-                                </div>
-                            ))}
-                        </div>
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center">
+                    <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Graduates Work At</h2>
+                    <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+                        We have a strong network of hiring partners, from top MNCs to innovative startups.
+                    </p>
+                </div>
+            </div>
+            <div className="mt-16 relative w-full overflow-hidden bg-primary/5 py-8">
+                 <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-primary/5 to-transparent z-10"></div>
+                 <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-primary/5 to-transparent z-10"></div>
+                <div className="flex w-max">
+                    <div className="flex marquee space-x-16">
+                        {[...companyLogos, ...companyLogos].map((company, index) => (
+                            <div key={`${company.name}-${index}`} className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                                <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
       <AlumniGallery />
 

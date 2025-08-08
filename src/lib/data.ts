@@ -194,6 +194,10 @@ export const companyLogos = [
     { name: 'Swiggy', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Flipkart', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Zomato', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Paytm', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Ola', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Cred', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Razorpay', logoUrl: 'https://placehold.co/140x70.png' },
 ];
 
 export const placementAssistance = [
