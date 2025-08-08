@@ -47,8 +47,8 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6 relative">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline">Launch Your Tech Career With Confidence</h1>
-                        <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-primary/80">
+                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline text-foreground">Launch Your Tech Career With Confidence</h1>
+                        <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-muted-foreground">
                             We don't just teach you skills; we pave the way for your success in the tech industry. Your dream job is within reach.
                         </p>
                         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
