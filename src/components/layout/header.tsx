@@ -23,6 +23,10 @@ const navLinks = [
   { 
     href: '/courses', 
     label: 'Courses',
+    submenu: courses.slice(0, 3).map(course => ({
+      href: `/courses/${course.slug}`,
+      label: course.title,
+    })),
   },
   { href: '/placements', label: 'Placements' },
   { href: '/about', label: 'About Us' },
@@ -117,7 +121,25 @@ export default function Header() {
           <div className="hidden md:flex flex-1 items-center justify-center space-x-6">
             <nav className="flex items-center space-x-6">
               {navLinks.map((link) => (
-                <NavLink key={link.href} {...link} />
+                link.submenu ? (
+                  <DropdownMenu key={link.href}>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className={cn('flex items-center text-sm font-medium transition-colors hover:text-accent', pathname.startsWith('/courses') ? 'text-primary' : 'text-muted-foreground')}>
+                        {link.label}
+                        <ChevronDown className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      {link.submenu.map((sublink) => (
+                        <DropdownMenuItem key={sublink.href} asChild>
+                          <Link href={sublink.href}>{sublink.label}</Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <NavLink key={link.href} {...link} />
+                )
               ))}
             </nav>
           </div>
