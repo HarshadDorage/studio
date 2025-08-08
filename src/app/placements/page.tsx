@@ -1,3 +1,4 @@
+'use client';
 
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +7,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp, Award, Briefcase } from "lucide-react";
 import AlumniGallery from "@/components/alumni-gallery";
 import { companyLogos, placementAssistance } from "@/lib/data";
-import React from "react";
+import React, { use } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
