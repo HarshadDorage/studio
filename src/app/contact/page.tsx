@@ -1,3 +1,4 @@
+
 'use client';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -55,9 +56,9 @@ export default function ContactPage() {
 
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             
-            <div className="lg:col-span-2">
+            <div className="space-y-8">
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle className="text-2xl font-headline">Send us a Message</CardTitle>
@@ -122,9 +123,6 @@ export default function ContactPage() {
                         </Form>
                     </CardContent>
                 </Card>
-            </div>
-            
-            <div className="space-y-8">
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle className="text-2xl font-headline">Contact Information</CardTitle>
@@ -173,21 +171,21 @@ export default function ContactPage() {
                     </CardContent>
                 </Card>
             </div>
-          </div>
-
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-center mb-8 font-headline text-primary">Our Location</h2>
-             <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.58334812489!2d77.62472931526487!3d12.93448999088019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc6d%3A0x5462537842603ae1!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1689243763268!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Samarthview Technologies Location"
-                ></iframe>
+            
+            <div>
+                 <h2 className="text-3xl font-bold text-center mb-8 font-headline text-primary">Our Location</h2>
+                 <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl border">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.58334812489!2d77.62472931526487!3d12.93448999088019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc6d%3A0x5462537842603ae1!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1689243763268!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Samarthview Technologies Location"
+                    ></iframe>
+                </div>
             </div>
           </div>
         </div>
