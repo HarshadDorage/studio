@@ -12,7 +12,7 @@ export default function CoursesPage() {
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">Our Courses</h1>
-          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary/80">
+          <p className="mt-4 text-lg max-w-2xl mx-auto">
             Find the perfect course to launch or advance your career in technology.
           </p>
         </div>
