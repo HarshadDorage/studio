@@ -20,7 +20,7 @@ export default function ParallaxHero() {
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://placehold.co/1920x1080.png')",
+          backgroundImage: "url('/images/background.jpg')",
           transform: `translateY(${offsetY * 0.5}px)`,
         }}
         data-ai-hint="abstract technology background"
