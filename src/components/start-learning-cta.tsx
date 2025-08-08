@@ -28,8 +28,8 @@ export default function StartLearningCta() {
                 <Card className="bg-secondary text-primary shadow-2xl overflow-hidden border-primary/20">
                      <div className="grid md:grid-cols-2 items-center">
                         <div className="p-8 md:p-12">
-                            <h2 className="text-3xl font-bold font-headline">Ready to Start Your Journey?</h2>
-                            <p className="mt-4 text-lg text-primary/80">
+                            <h2 className="text-3xl font-bold font-headline text-[#1A1A1A]">Ready to Start Your Journey?</h2>
+                            <p className="mt-4 text-lg text-[#696969]">
                                 Don't wait to build your future. Our expert-led courses are designed to get you job-ready from day one.
                             </p>
                             <div className="mt-6">
