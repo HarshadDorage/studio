@@ -70,8 +70,11 @@ export default function CourseCarousel({ courses }: CourseCarouselProps) {
             className="w-full"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
+            opts={{
+                align: 'start',
+            }}
         >
-            <CarouselContent className="-ml-2">
+            <CarouselContent className="-ml-2 flex justify-center">
                 {courses.map(course => (
                     <CarouselCard key={course.id} course={course} />
                 ))}
