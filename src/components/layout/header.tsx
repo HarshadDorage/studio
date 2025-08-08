@@ -3,7 +3,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Bookmark, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +16,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { useBookmarks } from '@/context/bookmark-context';
-import NotificationBell from './notification-bell';
 import { courses } from '@/lib/data';
 
 const navLinks = [
@@ -109,22 +108,6 @@ export default function Header() {
                           <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
                       </SheetClose>
                     ))}
-                     <SheetClose asChild>
-                      <Link
-                          href="/bookmarks"
-                          className={cn(
-                          'rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground flex items-center justify-between',
-                          pathname === '/bookmarks' ? 'bg-accent text-primary' : 'text-foreground'
-                          )}
-                      >
-                          Bookmarks
-                          {bookmarks.length > 0 && (
-                            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs">
-                                {bookmarks.length}
-                            </span>
-                          )}
-                      </Link>
-                    </SheetClose>
                   </nav>
                 </div>
               </SheetContent>
@@ -146,18 +129,6 @@ export default function Header() {
                  <Logo />
               </div>
           </div>
-          <Button asChild variant="ghost" size="icon" className="relative">
-            <Link href="/bookmarks">
-              <Bookmark className="h-6 w-6" />
-              {bookmarks.length > 0 && (
-                <span className="absolute top-0 right-0 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-accent-foreground text-xs">
-                  {bookmarks.length}
-                </span>
-              )}
-              <span className="sr-only">Bookmarks</span>
-            </Link>
-          </Button>
-          <NotificationBell />
            <Button asChild className="hidden sm:inline-flex">
               <Link href="/contact">Get In Touch</Link>
           </Button>
