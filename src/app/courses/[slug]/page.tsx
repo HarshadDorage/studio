@@ -9,6 +9,7 @@ import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Brief
 import TrainerCard from '@/components/trainer-card';
 import Testimonials from '@/components/testimonials';
 import Link from 'next/link';
+import Animated from '@/components/animated';
 
 // Generate static pages for each course
 export async function generateStaticParams() {
@@ -52,8 +53,13 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
         />
         <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 relative">
+          <Animated>
           <h1 className="text-3xl md:text-5xl font-bold font-headline text-foreground">{course.title}</h1>
+          </Animated>
+          <Animated delay={200}>
           <p className="mt-2 text-lg md:text-xl text-foreground/80">{course.description}</p>
+          </Animated>
+          <Animated delay={400}>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-foreground/90">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
@@ -68,6 +74,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               <span>{course.reviews.length * 5 + 10} Enrolled</span>
             </div>
           </div>
+          </Animated>
+          <Animated delay={600}>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button size="lg">Enroll Now</Button>
             <Button size="lg" variant="ghost">
@@ -75,6 +83,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               Share
             </Button>
           </div>
+          </Animated>
         </div>
       </header>
 
@@ -85,15 +94,15 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           <main className="lg:col-span-2">
 
             {/* Course Overview */}
-            <section className="mb-12">
+            <Animated as="section" className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Overview</h2>
               <div className="prose max-w-none text-foreground/80">
                 <p>{course.longDescription}</p>
               </div>
-            </section>
+            </Animated>
 
             {/* Course Content */}
-            <section className="mb-12">
+            <Animated as="section" className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Content</h2>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-0">
                 {course.syllabus.map((item, index) => (
@@ -110,10 +119,10 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   </AccordionItem>
                 ))}
               </Accordion>
-            </section>
+            </Animated>
 
             {/* Certification */}
-            <section className="mb-12">
+            <Animated as="section" className="mb-12">
               <Card className="bg-primary/5 border-primary/20 shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-primary">
@@ -125,19 +134,19 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   <p className="text-foreground/80">{course.certification}</p>
                 </CardContent>
               </Card>
-            </section>
+            </Animated>
 
             {/* Reviews */}
-            <section className="py-12">
+            <Animated as="section" className="py-12">
                  <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6 text-center">Student Feedback</h2>
                 <Testimonials reviews={allReviews} />
-            </section>
+            </Animated>
 
           </main>
 
           {/* Sticky Sidebar */}
           <aside>
-            <div className="sticky top-24 space-y-6">
+            <Animated className="sticky top-24 space-y-6">
               <Card className="shadow-lg border-primary/20">
                 <CardHeader>
                     <CardTitle className="text-xl font-headline">Ready to Start?</CardTitle>
@@ -159,7 +168,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
 
               <TrainerCard trainer={course.trainer} />
 
-            </div>
+            </Animated>
           </aside>
         </div>
       </div>

@@ -13,6 +13,7 @@ import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
+import Animated from "@/components/animated";
 
 
 const placementStats = [
@@ -48,10 +49,15 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6 relative">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline text-foreground">Launch Your Tech Career With Confidence</h1>
+                        <Animated>
+                            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline text-foreground">Launch Your Tech Career With Confidence</h1>
+                        </Animated>
+                        <Animated delay={200}>
                         <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-muted-foreground">
                             We don't just teach you skills; we pave the way for your success in the tech industry. Your dream job is within reach.
                         </p>
+                        </Animated>
+                        <Animated delay={400}>
                         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                             <Button size="lg" asChild>
                                 <Link href="/courses">Explore Courses</Link>
@@ -60,20 +66,23 @@ export default function Home() {
                                 <Link href="/contact">Speak to an Advisor</Link>
                             </Button>
                         </div>
+                        </Animated>
                     </div>
-                    <div className="hidden md:block">
+                    <Animated className="hidden md:block" animation="zoom-in">
                         <Image src="https://placehold.co/600x400.png" alt="Students celebrating success" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="successful students celebrating" />
-                    </div>
+                    </Animated>
                 </div>
             </div>
                 <div className="container mx-auto px-4 md:px-6 mt-16 md:mt-24">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                    {placementStats.map((stat) => (
-                            <div key={stat.label} className="bg-background/50 p-6 rounded-lg shadow-md border border-primary/10 backdrop-blur-sm">
+                    {placementStats.map((stat, index) => (
+                        <Animated key={stat.label} delay={index * 200}>
+                            <div className="bg-background/50 p-6 rounded-lg shadow-md border border-primary/10 backdrop-blur-sm">
                             <stat.icon className="h-10 w-10 text-accent mx-auto mb-4" />
                             <div className="text-4xl font-bold text-primary">{stat.value}</div>
                             <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
                         </div>
+                        </Animated>
                     ))}
                 </div>
             </div>
@@ -81,12 +90,13 @@ export default function Home() {
 
       <section id="why-us" className="py-16 sm:py-24">
         <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
+            <Animated className="text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Why Choose Samarthview?</h2>
                 <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
                     We are dedicated to providing the best learning experience to help you succeed in your tech career.
                 </p>
-            </div>
+            </Animated>
+            <Animated>
             <Carousel 
                 plugins={[plugin.current]}
                 className="w-full max-w-xs sm:max-w-xl md:max-w-5xl lg:max-w-6xl mx-auto mt-16"
@@ -118,20 +128,23 @@ export default function Home() {
                 <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 z-10" />
                 <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 z-10" />
             </Carousel>
+            </Animated>
         </div>
       </section>
 
       <section id="courses" className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-primary/10 to-secondary">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
+            <Animated className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
               <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
                 Jumpstart your career with our industry-focused training programs.
               </p>
-            </div>
-            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {courses.map((course) => (
-                <CourseCard key={course.id} course={course} />
+            </Animated>
+            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {courses.slice(0,3).map((course, index) => (
+                <Animated key={course.id} delay={index * 150}>
+                    <CourseCard course={course} />
+                </Animated>
               ))}
             </div>
           </div>
@@ -139,14 +152,14 @@ export default function Home() {
 
        <section className="py-16 sm:py-24">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center">
+                <Animated className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Graduates Work At</h2>
                     <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
                         We have a strong network of hiring partners, from top MNCs to innovative startups.
                     </p>
-                </div>
+                </Animated>
             </div>
-            <div className="mt-16 relative w-full overflow-hidden bg-primary/5 py-8">
+            <Animated className="mt-16 relative w-full overflow-hidden bg-primary/5 py-8">
                  <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-primary/5 to-transparent z-10"></div>
                  <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-primary/5 to-transparent z-10"></div>
                 <div className="flex w-max">
@@ -158,7 +171,7 @@ export default function Home() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </Animated>
         </section>
         <div className="container mx-auto px-4 md:px-6">
           <AlumniGallery />
