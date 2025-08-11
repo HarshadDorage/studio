@@ -115,8 +115,8 @@ export default function Home() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex" />
-                <CarouselNext className="hidden md:flex" />
+                <CarouselPrevious className="flex" />
+                <CarouselNext className="flex" />
             </Carousel>
         </div>
       </section>

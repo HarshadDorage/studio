@@ -255,7 +255,7 @@ export const notifications: Notification[] = [
 
 export const whyChooseUs = [
     {
-        icon: FileText,
+        icon: Target,
         title: "Resume Building",
         description: "Craft a standout resume that gets noticed by top recruiters."
     },
@@ -265,7 +265,7 @@ export const whyChooseUs = [
         description: "Get personalized guidance and support from industry veterans."
     },
     {
-        icon: Briefcase,
+        icon: TrendingUp,
         title: "Exclusive Job Fairs",
         description: "Connect directly with our network of leading hiring partners."
     },
