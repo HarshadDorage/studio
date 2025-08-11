@@ -32,14 +32,13 @@ export default function Footer() {
               <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
               <li><Link href="/courses" className="text-muted-foreground hover:text-primary">Courses</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
-              <li><Link href="/bookmarks" className="text-muted-foreground hover:text-primary">Bookmarks</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="font-semibold text-primary font-headline">Courses</h3>
             <ul className="mt-4 space-y-2">
-              {courses.slice(0, 4).map(course => (
+              {courses.slice(0, 3).map(course => (
                  <li key={course.id}><Link href={`/courses/${course.slug}`} className="text-muted-foreground hover:text-primary">{course.title}</Link></li>
               ))}
             </ul>
