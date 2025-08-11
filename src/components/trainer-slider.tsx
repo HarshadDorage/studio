@@ -20,17 +20,13 @@ interface TrainerSliderProps {
 }
 
 const socialIconMap: { [key: string]: React.ElementType } = {
-    LinkedIn: Linkedin,
-    Twitter: Twitter,
-    Dribbble: Dribbble,
+    Linkedin,
+    Twitter,
+    Dribbble,
 };
 
 const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
 
   return (
     <div
@@ -79,7 +75,7 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
 
             <div className="flex justify-center gap-4">
               {trainer.socials?.map((social) => {
-                const Icon = socialIconMap[social.icon as string];
+                const Icon = socialIconMap[social.icon];
                 if (!Icon) return null;
                 return (
                     <Link

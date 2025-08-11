@@ -14,7 +14,7 @@ export interface Trainer {
   title: string;
   bio: string;
   avatarUrl: string;
-  socials?: { name: string; url: string; icon: React.ElementType }[];
+  socials?: { name: string; url: string; icon: string }[];
   coursesTaught?: string[];
 }
 
