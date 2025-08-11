@@ -66,14 +66,14 @@ export default function AboutPage() {
                     </div>
                     <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
                         {coreValues.map((value) => (
-                             <Card key={value.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                             <Card key={value.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col border-t-4 border-accent hover:-translate-y-2">
                                 <CardHeader className="items-center">
                                     <div className="bg-primary/10 p-4 rounded-full">
                                         <value.icon className="h-8 w-8 text-primary" />
                                     </div>
                                     <CardTitle className="mt-4">{value.title}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <p className="text-muted-foreground">{value.description}</p>
                                 </CardContent>
                             </Card>
