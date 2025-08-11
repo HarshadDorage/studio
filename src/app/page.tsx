@@ -8,7 +8,7 @@ import { ArrowRight, TrendingUp, Award, Briefcase } from "lucide-react";
 import Link from "next/link";
 import AlumniGallery from "@/components/alumni-gallery";
 import StartLearningCta from "@/components/start-learning-cta";
-import CourseCarousel from "@/components/course-carousel";
+import CourseCard from "@/components/course-card";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import React from "react";
@@ -121,15 +121,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="courses" className="container mx-auto px-4 md:px-6 py-16 sm:py-24 rounded-lg bg-gradient-to-br from-primary/5 via-primary/10 to-secondary">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
-            <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
-              Jumpstart your career with our industry-focused training programs.
-            </p>
-          </div>
-          <div className="mt-16">
-            <CourseCarousel courses={courses} />
+      <section id="courses" className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-primary/10 to-secondary">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
+              <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+                Jumpstart your career with our industry-focused training programs.
+              </p>
+            </div>
+            <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {courses.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
           </div>
       </section>
 
@@ -165,5 +169,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
