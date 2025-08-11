@@ -109,9 +109,24 @@ export default function Header() {
                   </div>
                   <nav className="mt-2 flex flex-col gap-1 p-4">
                     {navLinks.map((link) => (
-                      <SheetClose asChild key={link.href}>
+                      link.submenu ? (
+                        <div key={link.href}>
+                          <SheetClose asChild>
+                            <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
+                          </SheetClose>
+                          <div className="ml-4 mt-2 space-y-1 border-l pl-4">
+                            {link.submenu.map((sublink) => (
+                              <SheetClose asChild key={sublink.href}>
+                                <MobileNavLink href={sublink.href} label={sublink.label} onLinkClick={() => {}} />
+                              </SheetClose>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <SheetClose asChild key={link.href}>
                           <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
-                      </SheetClose>
+                        </SheetClose>
+                      )
                     ))}
                   </nav>
                 </div>
