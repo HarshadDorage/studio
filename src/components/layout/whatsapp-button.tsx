@@ -10,7 +10,7 @@ export default function WhatsAppButton() {
     
     return (
         <Button asChild
-            className={cn("fixed bottom-6 right-6 h-16 w-16 rounded-full shadow-2xl z-50", 
+            className={cn("fixed bottom-24 right-6 h-16 w-16 rounded-full shadow-2xl z-50", 
             "bg-[#25D366] hover:bg-[#128C7E] text-white transition-all duration-300 hover:scale-110")}
             size="icon"
             aria-label="Chat on WhatsApp"
