@@ -147,13 +147,6 @@ export default function Home() {
                 </Animated>
               ))}
             </div>
-            <Animated className="text-center mt-12">
-                <Button asChild size="lg" variant="outline">
-                    <Link href="/courses">
-                        View All Courses <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
-            </Animated>
           </div>
       </section>
 
