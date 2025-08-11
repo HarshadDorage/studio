@@ -7,7 +7,7 @@ export default function Logo() {
         width="250"
         height="60"
         viewBox="0 0 300 70"
-        className="w-auto h-8 md:h-10"
+        className="w-auto h-10 md:h-12"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
@@ -19,36 +19,43 @@ export default function Logo() {
             fx="30%"
             fy="30%"
           >
-            <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="hsl(var(--primary))" />
+            <stop offset="0%" stopColor="#FFD700" stopOpacity="1" />
+            <stop offset="100%" stopColor="#FFA500" />
           </radialGradient>
+           <style>
+            {`
+              @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kalam:wght@300&display=swap');
+            `}
+          </style>
         </defs>
 
+        {/* Planet Icon */}
         <g transform="translate(5,5)">
-          <circle cx="30" cy="30" r="28" fill="hsl(var(--accent))" />
-          <path
+          <circle cx="30" cy="30" r="28" fill="url(#planetGradient)" />
+           <path
             d="M 5,30 A 25 12 0 0 1 55,30"
-            stroke="hsl(var(--primary-foreground))"
-            strokeWidth="5"
+            stroke="black"
+            strokeWidth="4"
             fill="none"
             transform="rotate(-20 30 30)"
           />
-          <path
+           <path
             d="M 5,30 A 25 12 0 0 0 55,30"
-            stroke="hsl(var(--primary-foreground))"
-            strokeWidth="5"
+            stroke="black"
+            strokeWidth="4"
             fill="none"
             transform="rotate(-20 30 30)"
           />
         </g>
         
+        {/* Text */}
         <g transform="translate(80, 5)">
           <text
             x="10"
             y="35"
-            fontFamily="Poppins, sans-serif"
-            fontSize="28"
-            fontWeight="600"
+            fontFamily="'Caveat', cursive"
+            fontSize="36"
+            fontWeight="700"
             fill="hsl(var(--primary))"
           >
             SamarthView
@@ -56,7 +63,7 @@ export default function Logo() {
           <line
             x1="10"
             y1="42"
-            x2="190"
+            x2="210"
             y2="42"
             stroke="hsl(var(--border))"
             strokeWidth="1"
@@ -64,8 +71,9 @@ export default function Logo() {
           <text
             x="10"
             y="60"
-            fontFamily="Poppins, sans-serif"
-            fontSize="14"
+            fontFamily="'Kalam', cursive"
+            fontSize="16"
+            fontWeight="300"
             fill="hsl(var(--muted-foreground))"
           >
             Imparting Global Skills
