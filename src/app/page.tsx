@@ -158,10 +158,14 @@ export default function Home() {
                 </div>
             </div>
         </section>
-
-      <AlumniGallery />
-
-      <StartLearningCta />
+        <div className="container mx-auto px-4 md:px-6">
+          <AlumniGallery />
+        </div>
+        <div className="container mx-auto px-4 md:px-6">
+         <StartLearningCta />
+        </div>
     </div>
   );
 }
+
+    
