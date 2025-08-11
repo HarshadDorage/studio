@@ -8,7 +8,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap, Video, FileText } from 'lucide-react';
 import TrainerCard from '@/components/trainer-card';
 import Testimonials from '@/components/testimonials';
-import ReviewSummarizer from './components/review-summarizer';
 import Link from 'next/link';
 
 // Generate static pages for each course
@@ -26,7 +25,6 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   }
   
   const allReviews = course.reviews;
-  const reviewsText = course.reviews.map(r => r.comment).join('\n');
 
   const getIcon = (slug: string) => {
     switch (slug) {
@@ -132,9 +130,6 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             {/* Reviews */}
             <section className="py-12">
                  <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6 text-center">Student Feedback</h2>
-                <div className="mb-12">
-                    <ReviewSummarizer courseName={course.title} reviews={reviewsText} />
-                </div>
                 <Testimonials reviews={allReviews} />
             </section>
 
