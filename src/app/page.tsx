@@ -92,10 +92,13 @@ export default function Home() {
                 className="w-full max-w-xs sm:max-w-xl md:max-w-5xl lg:max-w-6xl mx-auto mt-16"
                 onMouseEnter={plugin.current.stop}
                 onMouseLeave={plugin.current.reset}
+                 opts={{
+                    align: "start",
+                }}
             >
                 <CarouselContent className="-ml-4">
                     {whyChooseUs.map((item) => (
-                        <CarouselItem key={item.title} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                        <CarouselItem key={item.title} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
                              <div className="p-1 h-full">
                                 <Card className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2 h-full">
                                     <CardHeader className="items-center">
@@ -127,7 +130,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-16">
-            <CourseCarousel courses={courses.slice(0, 3)} />
+            <CourseCarousel courses={courses} />
           </div>
         </div>
       </section>

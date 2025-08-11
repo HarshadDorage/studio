@@ -50,7 +50,7 @@ export default function AboutPage() {
                             </p>
                         </div>
                         <div className="order-first md:order-last">
-                            <Image src="/images/about.jpg" alt="Our Team" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="collaborative team meeting" />
+                            <Image src="https://placehold.co/600x400.png" alt="Our Team" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="collaborative team meeting" />
                         </div>
                     </div>
                 </div>

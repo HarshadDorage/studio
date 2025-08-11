@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from "next/image";
@@ -85,7 +86,7 @@ export default function PlacementsPage() {
                         </p>
                     </div>
                     <div className="mt-16 bg-primary/5 border rounded-lg p-8">
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
                             {companyLogos.map((company) => (
                                 <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
                                     <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
@@ -111,10 +112,13 @@ export default function PlacementsPage() {
                         className="w-full max-w-xs sm:max-w-xl md:max-w-5xl lg:max-w-6xl mx-auto mt-16"
                         onMouseEnter={plugin.current.stop}
                         onMouseLeave={plugin.current.reset}
+                        opts={{
+                            align: "start",
+                        }}
                     >
                         <CarouselContent className="-ml-4">
                             {placementAssistance.map((item) => (
-                                <CarouselItem key={item.title} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                                <CarouselItem key={item.title} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                                     <div className="p-1 h-full">
                                         <Card className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2 h-full">
                                             <CardHeader className="items-center">

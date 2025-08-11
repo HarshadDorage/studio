@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import type { TeamMember } from '@/types';
@@ -36,7 +37,6 @@ const FlipCard = ({ trainer }: { trainer: TeamMember }) => {
       className={`flip-card h-[26rem] w-full ${isFlipped ? 'is-flipped' : ''}`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onClick={handleFlip}
     >
       <div className="flip-card-inner">
         {/* Front of the card */}
@@ -113,7 +113,7 @@ export default function TrainerSlider({ trainers }: TrainerSliderProps) {
     >
       <CarouselContent className="-ml-4">
         {trainers.map((trainer) => (
-          <CarouselItem key={trainer.name} className="pl-4 md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={trainer.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <FlipCard trainer={trainer} />
             </div>

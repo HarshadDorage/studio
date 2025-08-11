@@ -1,3 +1,4 @@
+
 import { placements } from "@/lib/data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -24,7 +25,7 @@ export default function AlumniGallery() {
                                 <p className="text-muted-foreground italic mb-4">"{placement.quote}"</p>
                                 <h3 className="font-bold text-lg">{placement.name}</h3>
                                 <p className="text-sm text-primary font-semibold mb-4">Placed at</p>
-                                <div className="relative w-32 h-16">
+                                <div className="relative w-32 h-16 grayscale hover:grayscale-0 transition-all">
                                      <Image src={placement.companyLogoUrl} alt={`${placement.company} logo`} layout="fill" objectFit="contain" data-ai-hint="company logo" />
                                 </div>
                             </CardContent>

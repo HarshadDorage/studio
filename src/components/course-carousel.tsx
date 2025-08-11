@@ -1,3 +1,4 @@
+
 'use client';
 import type { Course } from '@/types';
 import Link from 'next/link';
@@ -23,7 +24,7 @@ const CarouselCard = ({ course }: { course: Course }) => {
     const avgRating = getAverageRating(course.reviews);
 
     return (
-        <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 p-2">
+        <CarouselItem className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 p-2">
             <div className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col bg-card">
                 <Link href={`/courses/${course.slug}`} className="block h-full">
                     <div className="relative w-full h-48">
@@ -74,7 +75,7 @@ export default function CourseCarousel({ courses }: CourseCarouselProps) {
                 align: 'start',
             }}
         >
-            <CarouselContent className="-ml-2 flex justify-center">
+            <CarouselContent className="-ml-2">
                 {courses.map(course => (
                     <CarouselCard key={course.id} course={course} />
                 ))}
