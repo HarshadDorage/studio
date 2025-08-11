@@ -26,12 +26,20 @@ const coreValues = [
 export default function AboutPage() {
     return (
         <>
-            <section className="relative py-20 md:py-32 bg-secondary text-primary overflow-hidden">
-                <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
-                <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">About Samarthview Technologies</h1>
-                    <p className="mt-4 text-lg max-w-3xl mx-auto">
+            <section className="relative py-20 md:py-32 text-primary overflow-hidden isolate">
+                <Image 
+                    src="https://placehold.co/1920x400.png"
+                    alt="Abstract background"
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0 -z-20"
+                    data-ai-hint="abstract texture background"
+                />
+                <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm -z-10"></div>
+
+                <div className="container mx-auto px-4 md:px-6 text-center relative">
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline text-foreground">About Samarthview Technologies</h1>
+                    <p className="mt-4 text-lg max-w-3xl mx-auto text-foreground/80">
                         We are on a mission to empower India's tech talent through accessible, high-quality education and mentorship.
                     </p>
                 </div>

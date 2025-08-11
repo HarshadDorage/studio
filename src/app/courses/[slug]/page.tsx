@@ -43,13 +43,20 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   return (
     <div className="bg-background font-sans">
       {/* Header Section */}
-      <header className="relative bg-secondary text-primary py-12 md:py-20 overflow-hidden">
-        <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
-        <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-3xl md:text-5xl font-bold font-headline">{course.title}</h1>
-          <p className="mt-2 text-lg md:text-xl text-primary/80">{course.description}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-primary/90">
+      <header className="relative text-primary py-12 md:py-20 overflow-hidden isolate">
+         <Image 
+            src="https://placehold.co/1920x400.png"
+            alt="Abstract background"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0 -z-20"
+            data-ai-hint="abstract texture background"
+        />
+        <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm -z-10"></div>
+        <div className="container mx-auto px-4 md:px-6 relative">
+          <h1 className="text-3xl md:text-5xl font-bold font-headline text-foreground">{course.title}</h1>
+          <p className="mt-2 text-lg md:text-xl text-foreground/80">{course.description}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-foreground/90">
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
               <span>12 weeks</span>
