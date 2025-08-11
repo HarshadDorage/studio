@@ -1,6 +1,6 @@
 
 import type { Course, TeamMember, Placement, Notification } from '@/types';
-import { Briefcase, FileText, Users, Award, HeartHandshake, Code, TrendingUp, Target } from 'lucide-react';
+import { Briefcase, FileText, Users, Award, HeartHandshake, Code, TrendingUp, Target, Linkedin, Twitter, Dribbble } from 'lucide-react';
 
 export const trainers = {
   ananyaSharma: {
