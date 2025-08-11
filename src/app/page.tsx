@@ -121,8 +121,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="courses" className="py-16 sm:py-24 bg-primary/5">
-        <div className="px-4 md:px-6">
+      <section id="courses" className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-primary/10 to-secondary">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
             <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">

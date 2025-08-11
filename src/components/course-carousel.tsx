@@ -47,12 +47,12 @@ const CarouselCard = ({ course }: { course: Course }) => {
                                 <span>12 weeks</span>
                             </div>
                              <div className="flex items-center gap-2">
-                                <Star className="h-4 w-4 text-accent" />
+                                <Star className="h-4 w-4 text-accent fill-accent" />
                                 <span>{avgRating} ({course.reviews.length} reviews)</span>
                             </div>
                         </div>
-                        <Button className="w-full mt-4" asChild>
-                            <span>Enroll Now</span>
+                        <Button className="w-full mt-4">
+                            Learn More
                         </Button>
                     </CardContent>
                 </Link>
@@ -80,8 +80,8 @@ export default function CourseCarousel({ courses }: CourseCarouselProps) {
                     <CarouselCard key={course.id} course={course} />
                 ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 z-10" />
+            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 z-10" />
         </Carousel>
     );
 }
