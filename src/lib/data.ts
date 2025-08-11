@@ -1,31 +1,31 @@
 
 import type { Course, TeamMember, Placement, Notification } from '@/types';
-import { Briefcase, FileText, Users, Award, Linkedin, Twitter, Dribbble, HeartHandshake, Code, TrendingUp, Target } from 'lucide-react';
+import { Briefcase, FileText, Users, Award, HeartHandshake, Code, TrendingUp, Target } from 'lucide-react';
 
 export const trainers = {
   ananyaSharma: {
     name: 'Ananya Sharma',
     title: 'Lead UI/UX Instructor',
     bio: 'Ananya is a design veteran with over 12 years of experience crafting beautiful and intuitive user experiences for major tech companies. She is passionate about mentoring the next generation of designers.',
-    avatarUrl: '/images/women.png',
+    avatarUrl: 'https://placehold.co/128x128.png',
   },
   vikramSingh: {
     name: 'Vikram Singh',
     title: 'Senior DevOps Engineer',
     bio: 'Vikram has automated infrastructure for startups and large enterprises alike. His expertise lies in CI/CD pipelines, containerization, and cloud-native technologies.',
-    avatarUrl: '/images/men.png',
+    avatarUrl: 'https://placehold.co/128x128.png',
   },
   priyaPatel: {
     name: 'Priya Patel',
     title: 'Principal Python Developer',
     bio: 'Priya is a full-stack wizard with a love for Python. She has built scalable web applications and data processing systems for various industries.',
-    avatarUrl: '/images/women.png',
+    avatarUrl: 'https://placehold.co/128x128.png',
   },
   rohanMehta: {
     name: 'Rohan Mehta',
     title: 'Certified AWS Solutions Architect',
     bio: 'Rohan lives and breathes cloud computing. As a certified AWS professional, he has designed and managed robust, scalable, and cost-effective cloud infrastructures.',
-    avatarUrl: '/images/men.png',
+    avatarUrl: 'https://placehold.co/128x128.png',
   },
 };
 
@@ -36,7 +36,7 @@ export const courses: Course[] = [
     slug: 'advanced-ui-ux-design',
     description: 'Master the art of creating user-centric and visually stunning digital products.',
     longDescription: 'This comprehensive course covers everything from user research and wireframing to prototyping and usability testing. You\'ll work with industry-standard tools like Figma and learn design thinking principles to solve complex problems. Perfect for aspiring product designers.',
-    imageUrl: '/images/course.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     syllabusPdfUrl: '/pdfs/advanced-ui-ux-design-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Design Thinking', content: 'Introduction to user-centered design, empathy maps, and journey mapping.' },
@@ -59,7 +59,7 @@ export const courses: Course[] = [
     slug: 'devops-engineering-pro',
     description: 'Learn to build and manage scalable infrastructure with modern DevOps practices.',
     longDescription: 'Bridge the gap between development and operations. This course covers Git, Docker, Kubernetes, Jenkins, and Terraform. You\'ll learn to build automated CI/CD pipelines and manage infrastructure as code, essential skills for any modern software team.',
-    imageUrl: '/images/course.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     syllabusPdfUrl: '/pdfs/devops-engineering-pro-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Version Control with Git', content: 'Mastering branching, merging, and collaborative workflows.' },
@@ -81,7 +81,7 @@ export const courses: Course[] = [
     slug: 'full-stack-python-development',
     description: 'Become a versatile developer by mastering both front-end and back-end with Python.',
     longDescription: 'This course takes you from Python basics to building complete web applications. You\'ll learn Django for the back-end, React for the front-end, and how to connect them with a REST API. It\'s a complete package for anyone wanting to become a full-stack developer.',
-    imageUrl: '/images/course.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     syllabusPdfUrl: '/pdfs/full-stack-python-development-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Python Fundamentals', content: 'Data types, control flow, functions, and OOP in Python.' },
@@ -103,7 +103,7 @@ export const courses: Course[] = [
     slug: 'aws-cloud-practitioner',
     description: 'Get foundational knowledge of the AWS cloud and prepare for the certification exam.',
     longDescription: 'Start your cloud journey with this foundational course. It covers core AWS services, security, architecture principles, and pricing models. This course is aligned with the official AWS Certified Cloud Practitioner exam, making it the perfect starting point for a career in cloud.',
-    imageUrl: '/images/course.png',
+    imageUrl: 'https://placehold.co/600x400.png',
     syllabusPdfUrl: '/pdfs/aws-cloud-practitioner-syllabus.pdf',
     syllabus: [
       { title: 'Module 1: Cloud Concepts', content: 'Understanding the benefits and economics of cloud computing.' },
@@ -126,10 +126,10 @@ export const team: TeamMember[] = [
         name: 'Rajesh Kumar',
         title: 'Founder & CEO',
         bio: 'Rajesh is a visionary leader with 20+ years in the tech industry. He founded Samarthview to bridge the skill gap in India\'s tech workforce.',
-        avatarUrl: '/images/men.png',
+        avatarUrl: 'https://placehold.co/128x128.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
-            { name: 'Twitter', url: '#', icon: 'Twitter' },
+            { name: 'LinkedIn', url: '#', icon: Linkedin },
+            { name: 'Twitter', url: '#', icon: Twitter },
         ],
         coursesTaught: ['Keynote Speaker']
     },
@@ -137,9 +137,9 @@ export const team: TeamMember[] = [
         name: 'Sunita Nair',
         title: 'Head of Operations',
         bio: 'Sunita ensures that our operations run smoothly, from student admissions to course delivery, providing a seamless experience for everyone.',
-        avatarUrl: '/images/women.png',
+        avatarUrl: 'https://placehold.co/128x128.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
+            { name: 'LinkedIn', url: '#', icon: Linkedin },
         ],
         coursesTaught: ['Student Onboarding']
     },
@@ -147,13 +147,24 @@ export const team: TeamMember[] = [
         name: 'Amit Deshpande',
         title: 'Director of Curriculum',
         bio: 'Amit works with our trainers to design and update our curriculum, ensuring it stays relevant to the fast-paced tech industry.',
-        avatarUrl: '/images/men.png',
+        avatarUrl: 'https://placehold.co/128x128.png',
         socials: [
-            { name: 'LinkedIn', url: '#', icon: 'LinkedIn' },
-            { name: 'Twitter', url: '#', icon: 'Twitter' },
+            { name: 'LinkedIn', url: '#', icon: Linkedin },
+            { name: 'Twitter', url: '#', icon: Twitter },
         ],
         coursesTaught: ['Advanced UI/UX Design', 'Full-Stack Python Development']
-    }
+    },
+     {
+        name: 'Ananya Sharma',
+        title: 'Lead UI/UX Instructor',
+        bio: 'Ananya is a design veteran with over 12 years of experience crafting beautiful and intuitive user experiences for major tech companies.',
+        avatarUrl: 'https://placehold.co/128x128.png',
+        socials: [
+            { name: 'LinkedIn', url: '#', icon: Linkedin },
+            { name: 'Dribbble', url: '#', icon: Dribbble },
+        ],
+        coursesTaught: ['Advanced UI/UX Design']
+    },
 ];
 
 export const placements: Placement[] = [
@@ -161,35 +172,35 @@ export const placements: Placement[] = [
         name: 'Rohan Sharma',
         quote: 'This course was a game-changer! I landed my dream job at Google just two months after graduating.',
         company: 'Google',
-        companyLogoUrl: '/images/logo.png',
-        avatarUrl: '/images/men.png'
+        companyLogoUrl: 'https://placehold.co/140x70.png',
+        avatarUrl: 'https://placehold.co/128x128.png'
     },
     {
         name: 'Priya Verma',
         quote: 'The practical skills I learned were invaluable. The instructors are top-notch.',
         company: 'Microsoft',
-        companyLogoUrl: '/images/logo.png',
-        avatarUrl: '/images/women.png'
+        companyLogoUrl: 'https://placehold.co/140x70.png',
+        avatarUrl: 'https://placehold.co/128x128.png'
     },
     {
         name: 'Sameer Khan',
         quote: 'From zero to a certified cloud engineer. The placement support was incredible.',
         company: 'Amazon',
-        companyLogoUrl: '/images/logo.png',
-        avatarUrl: '/images/men.png'
+        companyLogoUrl: 'https://placehold.co/140x70.png',
+        avatarUrl: 'https://placehold.co/128x128.png'
     },
     {
         name: 'Anjali Mehta',
         quote: 'The portfolio I built here got me noticed. I now work as a UI/UX designer at a leading startup.',
         company: 'Swiggy',
-        companyLogoUrl: '/images/logo.png',
-        avatarUrl: '/images/women.png'
+        companyLogoUrl: 'https://placehold.co/140x70.png',
+        avatarUrl: 'https://placehold.co/128x128.png'
     }
 ];
 
 export const companyLogos = [
-    { name: 'Google', logoUrl: '/images/logo.png' },
-    { name: 'Microsoft', logoUrl: '/images/logo.png' },
+    { name: 'Google', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Microsoft', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Amazon', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Swiggy', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Flipkart', logoUrl: 'https://placehold.co/140x70.png' },

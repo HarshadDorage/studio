@@ -40,14 +40,14 @@ export default function Testimonials({ reviews }: TestimonialsProps) {
                                         <AvatarImage src={review.avatarUrl} alt={review.name} data-ai-hint="student headshot" />
                                         <AvatarFallback>{review.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                     </Avatar>
-                                    <p className="text-primary font-semibold text-lg">{review.name}</p>
+                                    <p className="font-semibold text-lg text-foreground">{review.name}</p>
                                     <p className="text-sm text-muted-foreground mb-2">{review.courseTaken}</p>
                                      <div className="flex my-2">
                                         {[...Array(5)].map((_, i) => (
                                             <Star key={i} className={`w-5 h-5 ${i < review.rating ? 'text-accent fill-accent' : 'text-muted-foreground/30'}`} />
                                         ))}
                                     </div>
-                                    <blockquote className="text-foreground/80 italic mt-4 flex-grow">"{review.comment}"</blockquote>
+                                    <blockquote className="text-muted-foreground italic mt-4 flex-grow">"{review.comment}"</blockquote>
                                 </CardContent>
                             </Card>
                         </div>

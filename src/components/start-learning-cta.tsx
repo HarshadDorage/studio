@@ -2,7 +2,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,8 +16,8 @@ export default function StartLearningCta() {
                     <Card className="bg-secondary text-primary shadow-2xl overflow-hidden border-primary/20">
                         <div className="grid md:grid-cols-2 items-center">
                             <div className="p-8 md:p-12">
-                                <h2 className="text-3xl font-bold font-headline text-[#1A1A1A]">Ready to Start Your Journey?</h2>
-                                <p className="mt-4 text-lg text-[#696969]">
+                                <h2 className="text-3xl font-bold font-headline text-foreground">Ready to Start Your Journey?</h2>
+                                <p className="mt-4 text-lg text-muted-foreground">
                                     Don't wait to build your future. Our expert-led courses are designed to get you job-ready from day one.
                                 </p>
                                 <div className="mt-6">
@@ -31,7 +31,7 @@ export default function StartLearningCta() {
                             </div>
                             <div className="hidden md:block h-full w-full bg-primary/10 relative">
                                 <div className="absolute inset-0 bg-gradient-to-l from-secondary via-secondary/50 to-transparent"></div>
-                                <Image src="https://placehold.co/600x400.png" alt="Students learning" className="h-full w-full object-cover" width={600} height={400} data-ai-hint="students collaborating" />
+                                <Image src="https://placehold.co/600x400.png" alt="Students learning" className="h-full w-full object-cover" fill data-ai-hint="students collaborating" />
                             </div>
                         </div>
                     </Card>

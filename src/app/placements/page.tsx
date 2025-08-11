@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp, Award, Briefcase } from "lucide-react";
 import AlumniGallery from "@/components/alumni-gallery";
 import { companyLogos, placementAssistance } from "@/lib/data";
-import React, { use } from "react";
+import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Animated from "@/components/animated";
@@ -48,10 +48,10 @@ export default function PlacementsPage() {
                    <div className="grid md:grid-cols-2 gap-8 items-center">
                         <div className="text-center md:text-left">
                              <Animated>
-                                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline">Launch Your Tech Career With Confidence</h1>
+                                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline text-foreground">Launch Your Tech Career With Confidence</h1>
                             </Animated>
                             <Animated delay={200}>
-                                <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-primary/80">
+                                <p className="mt-4 text-lg max-w-xl mx-auto md:mx-0 text-foreground/80">
                                     We don't just teach you skills; we pave the way for your success in the tech industry. Your dream job is within reach.
                                 </p>
                             </Animated>
@@ -89,8 +89,8 @@ export default function PlacementsPage() {
             <section className="py-16 sm:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <Animated className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Our Graduates Work At</h2>
-                        <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Graduates Work At</h2>
+                        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                             We have a strong network of hiring partners, from top MNCs to innovative startups.
                         </p>
                     </Animated>
@@ -98,7 +98,7 @@ export default function PlacementsPage() {
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
                             {companyLogos.map((company) => (
                                 <div key={company.name} className="flex justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                                    <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
+                                    <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} className="object-contain" data-ai-hint="company logo" />
                                 </div>
                             ))}
                         </div>
@@ -111,8 +111,8 @@ export default function PlacementsPage() {
             <section className="py-16 sm:py-24 bg-primary/5">
                 <div className="container mx-auto px-4 md:px-6">
                      <Animated className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl font-headline">Comprehensive Placement Assistance</h2>
-                        <p className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Comprehensive Placement Assistance</h2>
+                        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                            We provide end-to-end support to ensure you are job-ready.
                         </p>
                     </Animated>
@@ -127,7 +127,7 @@ export default function PlacementsPage() {
                             }}
                         >
                             <CarouselContent className="-ml-4">
-                                {placementAssistance.map((item) => (
+                                {placementAssistance.map((item, index) => (
                                     <CarouselItem key={item.title} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                                         <div className="p-1 h-full">
                                             <Card className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-t-accent hover:-translate-y-2 h-full">
@@ -158,8 +158,8 @@ export default function PlacementsPage() {
                     <Card className="bg-secondary text-primary shadow-2xl overflow-hidden border-primary/20">
                         <div className="grid md:grid-cols-2 items-center">
                             <div className="p-8 md:p-12 order-last md:order-first">
-                                <h2 className="text-3xl font-bold font-headline">Internship Opportunities</h2>
-                                <p className="mt-4 text-lg text-primary/80">
+                                <h2 className="text-3xl font-bold font-headline text-foreground">Internship Opportunities</h2>
+                                <p className="mt-4 text-lg text-foreground/80">
                                     Gain valuable real-world experience with our internship program. We connect top students with leading companies for exciting internship roles.
                                 </p>
                                 <div className="mt-6">

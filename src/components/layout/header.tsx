@@ -1,5 +1,4 @@
 
-
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,7 +14,6 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 import { cn } from '@/lib/utils';
-import { useBookmarks } from '@/context/bookmark-context';
 import { courses } from '@/lib/data';
 import React from 'react';
 
@@ -24,22 +22,22 @@ const navLinks = [
   { 
     href: '/courses', 
     label: 'Courses',
-    submenu: courses.slice(0, 3).map(course => ({
+    submenu: courses.map(course => ({
       href: `/courses/${course.slug}`,
       label: course.title,
     })),
   },
   { href: '/about', label: 'About Us' },
+  { href: '/placements', label: 'Placements' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
-  const { bookmarks } = useBookmarks();
   const [isCoursesMenuOpen, setIsCoursesMenuOpen] = React.useState(false);
 
   const NavLink = ({ href, label, className, children }: { href: string; label:string; className?: string; children?: React.ReactNode }) => {
-    const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
+    const isActive = pathname === href || (href.length > 1 && pathname.startsWith(href));
     return (
         <Link
             href={href}
@@ -55,41 +53,27 @@ export default function Header() {
     );
   };
   
-   const MobileNavLink = ({ href, label, onLinkClick }: { href: string; label: string; onLinkClick: () => void }) => {
-    const isActive = pathname === href;
+   const MobileNavLink = ({ href, label }: { href: string; label: string; }) => {
+    const isActive = pathname === href || (href.length > 1 && pathname.startsWith(href));
     return (
-      <Link
-        href={href}
-        onClick={onLinkClick}
-        className={cn(
-          'block rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
-          isActive ? 'bg-primary/10 text-primary' : 'text-foreground'
-        )}
-      >
-        {label}
-      </Link>
+      <SheetClose asChild>
+          <Link
+            href={href}
+            className={cn(
+              'block rounded-md px-3 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
+              isActive ? 'bg-primary/10 text-primary' : 'text-foreground'
+            )}
+          >
+            {label}
+          </Link>
+      </SheetClose>
     );
   };
-
-  const SubmenuMobile = ({ label, submenu, onLinkClick }: { label: string; submenu: { href: string; label: string }[]; onLinkClick: () => void }) => {
-    return (
-      <div className="space-y-1">
-        <span className="px-3 py-2 text-base font-medium text-muted-foreground">{label}</span>
-        <div className='ml-4 space-y-1'>
-          {submenu.map(sublink => (
-            <SheetClose asChild key={sublink.href}>
-              <MobileNavLink href={sublink.href} label={sublink.label} onLinkClick={onLinkClick} />
-            </SheetClose>
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="mr-auto hidden md:flex">
           <Logo />
         </div>
         
@@ -105,27 +89,21 @@ export default function Header() {
               <SheetContent side="left" className="p-0">
                  <div className="flex flex-col h-full">
                   <div className="p-6 border-b">
-                    <Logo />
+                     <SheetClose asChild><Logo /></SheetClose>
                   </div>
                   <nav className="mt-2 flex flex-col gap-1 p-4">
                     {navLinks.map((link) => (
                       link.submenu ? (
                         <div key={link.href}>
-                          <SheetClose asChild>
-                            <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
-                          </SheetClose>
+                          <MobileNavLink href={link.href} label={link.label} />
                           <div className="ml-4 mt-2 space-y-1 border-l pl-4">
                             {link.submenu.map((sublink) => (
-                              <SheetClose asChild key={sublink.href}>
-                                <MobileNavLink href={sublink.href} label={sublink.label} onLinkClick={() => {}} />
-                              </SheetClose>
+                              <MobileNavLink key={sublink.href} href={sublink.href} label={sublink.label} />
                             ))}
                           </div>
                         </div>
                       ) : (
-                        <SheetClose asChild key={link.href}>
-                          <MobileNavLink href={link.href} label={link.label} onLinkClick={() => {}} />
-                        </SheetClose>
+                        <MobileNavLink key={link.href} href={link.href} label={link.label} />
                       )
                     ))}
                   </nav>
@@ -146,7 +124,10 @@ export default function Header() {
                           <ChevronDown className={cn("relative top-[1px] ml-1 h-3 w-3 transition duration-200", isCoursesMenuOpen && "rotate-180")} />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent onMouseEnter={() => setIsCoursesMenuOpen(true)} onMouseLeave={() => setIsCoursesMenuOpen(false)}>
+                      <DropdownMenuContent align="start" onMouseEnter={() => setIsCoursesMenuOpen(true)} onMouseLeave={() => setIsCoursesMenuOpen(false)}>
+                        <DropdownMenuItem key={link.href} asChild>
+                            <Link href={link.href}>All Courses</Link>
+                          </DropdownMenuItem>
                         {link.submenu.map((sublink) => (
                           <DropdownMenuItem key={sublink.href} asChild>
                             <Link href={sublink.href}>{sublink.label}</Link>
@@ -163,7 +144,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex flex-none items-center justify-end gap-2">
+        <div className="flex flex-none items-center justify-end gap-2 ml-auto">
           <div className="md:hidden flex-1">
               <div className="flex justify-center">
                  <Logo />

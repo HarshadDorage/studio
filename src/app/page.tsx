@@ -2,7 +2,7 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { courses, companyLogos, whyChooseUs } from "@/lib/data";
 import { ArrowRight, TrendingUp, Award, Briefcase } from "lucide-react";
 import Link from "next/link";
@@ -91,8 +91,8 @@ export default function Home() {
       <section id="why-us" className="py-16 sm:py-24">
         <div className="container mx-auto px-4 md:px-6">
             <Animated className="text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Why Choose Samarthview?</h2>
-                <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Why Choose Samarthview?</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                     We are dedicated to providing the best learning experience to help you succeed in your tech career.
                 </p>
             </Animated>
@@ -135,8 +135,8 @@ export default function Home() {
       <section id="courses" className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 via-primary/10 to-secondary">
           <div className="container mx-auto px-4 md:px-6">
             <Animated className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Featured Courses</h2>
-              <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Featured Courses</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Jumpstart your career with our industry-focused training programs.
               </p>
             </Animated>
@@ -147,14 +147,21 @@ export default function Home() {
                 </Animated>
               ))}
             </div>
+            <Animated className="text-center mt-12">
+                <Button asChild size="lg" variant="outline">
+                    <Link href="/courses">
+                        View All Courses <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </Button>
+            </Animated>
           </div>
       </section>
 
        <section className="py-16 sm:py-24">
             <div className="container mx-auto px-4 md:px-6">
                 <Animated className="text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Graduates Work At</h2>
-                    <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Graduates Work At</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                         We have a strong network of hiring partners, from top MNCs to innovative startups.
                     </p>
                 </Animated>
@@ -166,19 +173,15 @@ export default function Home() {
                     <div className="flex marquee space-x-16">
                         {[...companyLogos, ...companyLogos].map((company, index) => (
                             <div key={`${company.name}-${index}`} className="flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                                <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} objectFit="contain" data-ai-hint="company logo" />
+                                <Image src={company.logoUrl} alt={`${company.name} logo`} width={140} height={70} className="object-contain" data-ai-hint="company logo" />
                             </div>
                         ))}
                     </div>
                 </div>
             </Animated>
         </section>
-        <div className="container mx-auto px-4 md:px-6">
-          <AlumniGallery />
-        </div>
-        <div className="container mx-auto px-4 md:px-6">
-         <StartLearningCta />
-        </div>
+        <AlumniGallery />
+        <StartLearningCta />
     </div>
   );
 }

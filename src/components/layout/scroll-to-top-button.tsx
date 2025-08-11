@@ -10,7 +10,7 @@ export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 300) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -38,12 +38,12 @@ export default function ScrollToTopButton() {
         size="icon"
         onClick={scrollToTop}
         className={cn(
-          'h-10 w-10 rounded-lg bg-foreground text-background shadow-lg transition-all duration-300 hover:bg-foreground/80 hover:scale-105',
+          'h-12 w-12 rounded-full bg-foreground text-background shadow-lg transition-all duration-300 hover:bg-foreground/80 hover:scale-105',
           isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
         )}
         aria-label="Scroll to top"
       >
-        <ArrowUp className="h-5 w-5" />
+        <ArrowUp className="h-6 w-6" />
       </Button>
     </div>
   );

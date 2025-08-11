@@ -10,8 +10,8 @@ export default function AlumniGallery() {
         <section className="py-16 sm:py-24">
             <div className="container mx-auto px-4 md:px-6">
                 <Animated className="text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-[#1A1A1A] sm:text-4xl font-headline">Our Alumni Success Stories</h2>
-                    <p className="mt-4 text-lg text-[#696969] max-w-2xl mx-auto">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Alumni Success Stories</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                         Our graduates are making an impact at top companies across the tech industry.
                     </p>
                 </Animated>
@@ -25,10 +25,10 @@ export default function AlumniGallery() {
                                         <AvatarFallback>{placement.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                     </Avatar>
                                     <p className="text-muted-foreground italic mb-4 flex-grow">"{placement.quote}"</p>
-                                    <h3 className="font-bold text-lg">{placement.name}</h3>
+                                    <h3 className="font-bold text-lg text-foreground">{placement.name}</h3>
                                     <p className="text-sm text-primary font-semibold mb-4">Placed at</p>
                                     <div className="relative w-32 h-16 grayscale hover:grayscale-0 transition-all">
-                                        <Image src={placement.companyLogoUrl} alt={`${placement.company} logo`} layout="fill" objectFit="contain" data-ai-hint="company logo" />
+                                        <Image src={placement.companyLogoUrl} alt={`${placement.company} logo`} fill objectFit="contain" data-ai-hint="company logo" />
                                     </div>
                                 </CardContent>
                             </Card>

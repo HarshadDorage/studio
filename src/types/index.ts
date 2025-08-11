@@ -14,7 +14,7 @@ export interface Trainer {
   title: string;
   bio: string;
   avatarUrl: string;
-  socials?: { name: string; url: string; icon: string }[];
+  socials?: { name: string; url: string; icon: React.ElementType }[];
   coursesTaught?: string[];
 }
 
@@ -32,14 +32,7 @@ export interface Course {
   reviews: Review[];
 }
 
-export interface TeamMember {
-  name: string;
-  title: string;
-  bio: string;
-  avatarUrl: string;
-  socials?: { name: string; url: string; icon: string | React.ElementType }[];
-  coursesTaught?: string[];
-}
+export interface TeamMember extends Trainer {}
 
 export interface Placement {
     name: string;

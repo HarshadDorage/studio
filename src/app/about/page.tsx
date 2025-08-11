@@ -31,9 +31,8 @@ export default function AboutPage() {
                 <Image 
                     src="https://placehold.co/1920x400.png"
                     alt="Abstract background"
-                    layout="fill"
-                    objectFit="cover"
-                    className="absolute inset-0 -z-20"
+                    fill
+                    className="absolute inset-0 -z-20 object-cover"
                     data-ai-hint="abstract texture background"
                 />
                 <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm -z-10"></div>
@@ -54,11 +53,11 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <Animated>
-                            <h2 className="text-3xl font-bold tracking-tight font-headline text-[#1A1A1A]">Our Story</h2>
-                            <p className="mt-4">
+                            <h2 className="text-3xl font-bold tracking-tight font-headline text-foreground">Our Story</h2>
+                            <p className="mt-4 text-muted-foreground">
                                 Samarthview Technologies was founded with a simple yet powerful vision: to bridge the gap between academic education and the skills demanded by the fast-evolving tech industry. We saw a nation brimming with potential but lacking the right platforms for practical, industry-relevant training.
                             </p>
-                            <p className="mt-4">
+                            <p className="mt-4 text-muted-foreground">
                                 From our humble beginnings, we have grown into a leading tech training institute, dedicated to creating a generation of skilled professionals ready to lead and innovate. Our approach combines a hands-on curriculum, expert mentorship, and robust career support to ensure our students don't just learn, but thrive.
                             </p>
                         </Animated>
@@ -72,8 +71,8 @@ export default function AboutPage() {
             <section className="py-16 sm:py-24 bg-primary/5">
                 <div className="container mx-auto px-4 md:px-6">
                     <Animated className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-[#1A1A1A]">Our Core Values</h2>
-                        <p className="mt-4 text-lg max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-foreground">Our Core Values</h2>
+                        <p className="mt-4 text-lg max-w-2xl mx-auto text-muted-foreground">
                            The principles that guide our mission and define our culture.
                         </p>
                     </Animated>
@@ -100,8 +99,8 @@ export default function AboutPage() {
             <section className="py-16 sm:py-24">
                  <div className="container mx-auto px-4 md:px-6">
                     <Animated className="text-center">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-[#1A1A1A]">Meet Our Leadership</h2>
-                         <p className="mt-4 text-lg max-w-2xl mx-auto">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl font-headline text-foreground">Meet Our Leadership</h2>
+                         <p className="mt-4 text-lg max-w-2xl mx-auto text-muted-foreground">
                            The passionate individuals driving our mission forward.
                         </p>
                     </Animated>

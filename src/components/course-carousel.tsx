@@ -4,7 +4,7 @@ import type { Course } from '@/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { CardContent } from '@/components/ui/card';
 import { Clock, Star } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
@@ -31,9 +31,8 @@ const CarouselCard = ({ course }: { course: Course }) => {
                         <Image
                             src={course.imageUrl}
                             alt={course.title}
-                            layout="fill"
-                            objectFit="cover"
-                            className="transition-transform duration-300 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint="course thumbnail"
                         />
                     </div>

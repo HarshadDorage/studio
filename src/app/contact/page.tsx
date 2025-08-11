@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
+import Animated from "@/components/animated";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -43,14 +44,18 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="relative bg-secondary text-primary py-20 overflow-hidden">
+      <section className="relative bg-secondary text-primary py-20 md:py-32 overflow-hidden">
         <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline">Get In Touch</h1>
-          <p className="mt-4 text-lg max-w-2xl mx-auto text-primary/80">
-            We're here to help. Whether you have a question about our courses or need support, we're ready to answer.
-          </p>
+        <div className="container mx-auto px-4 md:px-6 text-center relative">
+          <Animated>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl font-headline text-foreground">Get In Touch</h1>
+          </Animated>
+          <Animated delay={200}>
+            <p className="mt-4 text-lg max-w-2xl mx-auto text-foreground/80">
+              We're here to help. Whether you have a question about our courses or need support, we're ready to answer.
+            </p>
+          </Animated>
         </div>
       </section>
 
@@ -58,7 +63,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             
-            <div className="space-y-8">
+            <Animated className="space-y-8">
                 <Card className="shadow-xl">
                     <CardHeader>
                         <CardTitle className="text-2xl font-headline">Send us a Message</CardTitle>
@@ -170,9 +175,9 @@ export default function ContactPage() {
                         </div>
                     </CardContent>
                 </Card>
-            </div>
+            </Animated>
             
-            <div className="flex flex-col">
+            <Animated className="flex flex-col" delay={200}>
                  <div className="flex-grow w-full rounded-lg overflow-hidden shadow-2xl border">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.58334812489!2d77.62472931526487!3d12.93448999088019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc6d%3A0x5462537842603ae1!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1689243763268!5m2!1sen!2sin"
@@ -185,7 +190,7 @@ export default function ContactPage() {
                         title="Samarthview Technologies Location"
                     ></iframe>
                 </div>
-            </div>
+            </Animated>
           </div>
         </div>
       </section>

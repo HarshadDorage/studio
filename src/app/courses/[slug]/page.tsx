@@ -5,13 +5,12 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap, Video, FileText } from 'lucide-react';
+import { Clock, BookOpen, Users, Share2, CheckCircle, Code, Brush, Layers, Briefcase, Download, HelpCircle, GraduationCap } from 'lucide-react';
 import TrainerCard from '@/components/trainer-card';
 import Testimonials from '@/components/testimonials';
 import Link from 'next/link';
 import Animated from '@/components/animated';
 
-// Generate static pages for each course
 export async function generateStaticParams() {
   return courses.map((course) => ({
     slug: course.slug,
@@ -41,14 +40,12 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
 
   return (
     <div className="bg-background font-sans">
-      {/* Header Section */}
       <header className="relative text-primary py-12 md:py-20 overflow-hidden isolate">
          <Image 
             src="https://placehold.co/1920x400.png"
             alt="Abstract background"
-            layout="fill"
-            objectFit="cover"
-            className="absolute inset-0 -z-20"
+            fill
+            className="absolute inset-0 -z-20 object-cover"
             data-ai-hint="abstract texture background"
         />
         <div className="absolute inset-0 bg-secondary/80 backdrop-blur-sm -z-10"></div>
@@ -78,7 +75,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           <Animated delay={600}>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <Button size="lg">Enroll Now</Button>
-            <Button size="lg" variant="ghost">
+            <Button size="lg" variant="outline">
               <Share2 className="mr-2 h-5 w-5" />
               Share
             </Button>
@@ -90,18 +87,15 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
           
-          {/* Main Content */}
           <main className="lg:col-span-2">
 
-            {/* Course Overview */}
             <Animated as="section" className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Overview</h2>
-              <div className="prose max-w-none text-foreground/80">
+              <div className="prose max-w-none text-muted-foreground">
                 <p>{course.longDescription}</p>
               </div>
             </Animated>
 
-            {/* Course Content */}
             <Animated as="section" className="mb-12">
               <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6">Course Content</h2>
               <Accordion type="single" collapsible className="w-full" defaultValue="item-0">
@@ -113,7 +107,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                             <span>{item.title}</span>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent className="text-foreground/80">
+                    <AccordionContent className="text-muted-foreground">
                       <p>{item.content}</p>
                     </AccordionContent>
                   </AccordionItem>
@@ -121,7 +115,6 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               </Accordion>
             </Animated>
 
-            {/* Certification */}
             <Animated as="section" className="mb-12">
               <Card className="bg-primary/5 border-primary/20 shadow-lg">
                 <CardHeader>
@@ -131,12 +124,11 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-foreground/80">{course.certification}</p>
+                  <p className="text-muted-foreground">{course.certification}</p>
                 </CardContent>
               </Card>
             </Animated>
 
-            {/* Reviews */}
             <Animated as="section" className="py-12">
                  <h2 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-6 text-center">Student Feedback</h2>
                 <Testimonials reviews={allReviews} />
@@ -144,7 +136,6 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
 
           </main>
 
-          {/* Sticky Sidebar */}
           <aside>
             <Animated className="sticky top-24 space-y-6">
               <Card className="shadow-lg border-primary/20">
