@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -5,6 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import WhatsAppButton from '@/components/layout/whatsapp-button';
 import { BookmarkProvider } from '@/context/bookmark-context';
+import ScrollToTopButton from '@/components/layout/scroll-to-top-button';
 
 export const metadata: Metadata = {
   title: 'Samarthview Technologies - Unlock Your Tech Potential',
@@ -31,6 +33,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <WhatsAppButton />
+          <ScrollToTopButton />
           <Toaster />
         </BookmarkProvider>
       </body>

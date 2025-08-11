@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import WhatsAppIcon from "../icons/whatsapp-icon";
@@ -9,12 +10,12 @@ export default function WhatsAppButton() {
     
     return (
         <Button asChild
-            className="fixed bottom-6 right-6 h-16 w-16 rounded-full shadow-2xl bg-accent hover:bg-accent/90 z-50"
+            className="fixed bottom-6 right-6 h-16 w-16 rounded-full shadow-2xl bg-green-500 hover:bg-green-600 z-50"
             size="icon"
             aria-label="Chat on WhatsApp"
         >
             <Link href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="h-8 w-8 text-accent-foreground" />
+                <WhatsAppIcon className="h-8 w-8 text-white" />
             </Link>
         </Button>
     )
