@@ -7,19 +7,19 @@ export const trainers = {
     name: 'Ananya Sharma',
     title: 'Lead UI/UX Instructor',
     bio: 'Ananya is a design veteran with over 12 years of experience crafting beautiful and intuitive user experiences for major tech companies. She is passionate about mentoring the next generation of designers.',
-    avatarUrl: 'https://placehold.co/128x128.png',
+    avatarUrl: '/images/women.png',
   },
   vikramSingh: {
     name: 'Vikram Singh',
     title: 'Senior DevOps Engineer',
     bio: 'Vikram has automated infrastructure for startups and large enterprises alike. His expertise lies in CI/CD pipelines, containerization, and cloud-native technologies.',
-    avatarUrl: 'https://placehold.co/128x128.png',
+    avatarUrl: '/images/men.png',
   },
   priyaPatel: {
     name: 'Priya Patel',
     title: 'Principal Python Developer',
     bio: 'Priya is a full-stack wizard with a love for Python. She has built scalable web applications and data processing systems for various industries.',
-    avatarUrl: 'https://placehold.co/128x128.png',
+    avatarUrl: '/images/women.png',
   },
 };
 
@@ -98,7 +98,7 @@ export const team: TeamMember[] = [
         name: 'Rajesh Kumar',
         title: 'Founder & CEO',
         bio: 'Rajesh is a visionary leader with 20+ years in the tech industry. He founded Samarthview to bridge the skill gap in India\'s tech workforce.',
-        avatarUrl: 'https://placehold.co/128x128.png',
+        avatarUrl: '/images/men.png',
         socials: [
             { name: 'LinkedIn', url: '#', icon: 'Linkedin' },
             { name: 'Twitter', url: '#', icon: 'Twitter' },
@@ -109,7 +109,7 @@ export const team: TeamMember[] = [
         name: 'Sunita Nair',
         title: 'Head of Operations',
         bio: 'Sunita ensures that our operations run smoothly, from student admissions to course delivery, providing a seamless experience for everyone.',
-        avatarUrl: 'https://placehold.co/128x128.png',
+        avatarUrl: '/images/women.png',
         socials: [
             { name: 'LinkedIn', url: '#', icon: 'Linkedin' },
         ],
@@ -119,7 +119,7 @@ export const team: TeamMember[] = [
         name: 'Amit Deshpande',
         title: 'Director of Curriculum',
         bio: 'Amit works with our trainers to design and update our curriculum, ensuring it stays relevant to the fast-paced tech industry.',
-        avatarUrl: 'https://placehold.co/128x128.png',
+        avatarUrl: '/images/men.png',
         socials: [
             { name: 'LinkedIn', url: '#', icon: 'Linkedin' },
             { name: 'Twitter', url: '#', icon: 'Twitter' },
@@ -130,7 +130,7 @@ export const team: TeamMember[] = [
         name: 'Ananya Sharma',
         title: 'Lead UI/UX Instructor',
         bio: 'Ananya is a design veteran with over 12 years of experience crafting beautiful and intuitive user experiences for major tech companies.',
-        avatarUrl: 'https://placehold.co/128x128.png',
+        avatarUrl: '/images/women.png',
         socials: [
             { name: 'LinkedIn', url: '#', icon: 'Linkedin' },
             { name: 'Dribbble', url: '#', icon: 'Dribbble' },
@@ -145,36 +145,36 @@ export const placements: Placement[] = [
         quote: 'This course was a game-changer! I landed my dream job at Google just two months after graduating.',
         company: 'Google',
         companyLogoUrl: 'https://placehold.co/140x70.png',
-        avatarUrl: 'https://placehold.co/128x128.png'
+        avatarUrl: '/images/men.png'
     },
     {
         name: 'Priya Verma',
         quote: 'The practical skills I learned were invaluable. The instructors are top-notch.',
         company: 'Microsoft',
         companyLogoUrl: 'https://placehold.co/140x70.png',
-        avatarUrl: 'https://placehold.co/128x128.png'
+        avatarUrl: '/images/women.png'
     },
     {
         name: 'Sameer Khan',
         quote: 'From zero to a certified cloud engineer. The placement support was incredible.',
         company: 'Amazon',
         companyLogoUrl: 'https://placehold.co/140x70.png',
-        avatarUrl: 'https://placehold.co/128x128.png'
+        avatarUrl: '/images/men.png'
     },
     {
         name: 'Anjali Mehta',
         quote: 'The portfolio I built here got me noticed. I now work as a UI/UX designer at a leading startup.',
         company: 'Swiggy',
         companyLogoUrl: 'https://placehold.co/140x70.png',
-        avatarUrl: 'https://placehold.co/128x128.png'
+        avatarUrl: '/images/women.png'
     }
 ];
 
 export const companyLogos = [
-    { name: 'Google', logoUrl: 'https://placehold.co/140x70.png' },
-    { name: 'Microsoft', logoUrl: 'https://placehold.co/140x70.png' },
-    { name: 'Amazon', logoUrl: 'https://placehold.co/140x70.png' },
-    { name: 'Swiggy', logoUrl: 'https://placehold.co/140x70.png' },
+    { name: 'Google', logoUrl: '/images/tcs.jpg' },
+    { name: 'Microsoft', logoUrl: '/images/tcs.jpg' },
+    { name: 'Amazon', logoUrl: '/images/tcs.jpg' },
+    { name: 'Swiggy', logoUrl: '/images/tcs.jpg' },
     { name: 'Flipkart', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Zomato', logoUrl: 'https://placehold.co/140x70.png' },
     { name: 'Paytm', logoUrl: 'https://placehold.co/140x70.png' },

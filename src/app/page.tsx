@@ -69,7 +69,7 @@ export default function Home() {
                         </Animated>
                     </div>
                     <Animated className="hidden md:block" animation="zoom-in">
-                        <Image src="https://placehold.co/600x400.png" alt="Students celebrating success" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="successful students celebrating" />
+                        <Image src="/images/home.png" alt="Students celebrating success" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="successful students celebrating" />
                     </Animated>
                 </div>
             </div>

@@ -29,7 +29,7 @@ export default function AboutPage() {
         <>
             <section className="relative py-20 md:py-32 text-primary overflow-hidden isolate">
                 <Image 
-                    src="https://placehold.co/1920x400.png"
+                    src="/images/about.jpeg"
                     alt="Abstract background"
                     fill
                     className="absolute inset-0 -z-20 object-cover"
@@ -62,7 +62,7 @@ export default function AboutPage() {
                             </p>
                         </Animated>
                         <Animated animation="zoom-in" className="order-first md:order-last">
-                            <Image src="https://placehold.co/600x400.png" alt="Our Team" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="collaborative team meeting" />
+                            <Image src="/images/about.jpg" alt="Our Team" width={600} height={400} className="rounded-lg shadow-xl" data-ai-hint="collaborative team meeting" />
                         </Animated>
                     </div>
                 </div>

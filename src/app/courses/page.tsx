@@ -12,7 +12,7 @@ export default function CoursesPage() {
     <>
       <section className="relative text-primary py-20 md:py-32 overflow-hidden isolate">
          <Image 
-            src="https://placehold.co/1920x400.png"
+            src="/images/about.jpeg"
             alt="Abstract background"
             fill
             className="absolute inset-0 -z-20 object-cover"
