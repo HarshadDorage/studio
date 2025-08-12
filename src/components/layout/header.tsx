@@ -28,7 +28,6 @@ const navLinks = [
     })),
   },
   { href: '/about', label: 'About Us' },
-  { href: '/placements', label: 'Placements' },
   { href: '/contact', label: 'Contact' },
 ];
 
