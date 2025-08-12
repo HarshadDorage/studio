@@ -1,6 +1,6 @@
 
 import type { Course, TeamMember, Placement, Notification } from '@/types';
-import { Briefcase, FileText, Users, Award, HeartHandshake, Code, TrendingUp, Target } from 'lucide-react';
+import { Briefcase, FileText, Users, Award, HeartHandshake, Code, TrendingUp, Target, Linkedin, Twitter, Dribbble } from 'lucide-react';
 
 export const trainers = {
   ananyaSharma: {
@@ -19,12 +19,6 @@ export const trainers = {
     name: 'Priya Patel',
     title: 'Principal Python Developer',
     bio: 'Priya is a full-stack wizard with a love for Python. She has built scalable web applications and data processing systems for various industries.',
-    avatarUrl: 'https://placehold.co/128x128.png',
-  },
-  rohanMehta: {
-    name: 'Rohan Mehta',
-    title: 'Certified AWS Solutions Architect',
-    bio: 'Rohan lives and breathes cloud computing. As a certified AWS professional, he has designed and managed robust, scalable, and cost-effective cloud infrastructures.',
     avatarUrl: 'https://placehold.co/128x128.png',
   },
 };
@@ -95,28 +89,6 @@ export const courses: Course[] = [
     reviews: [
       { id: 1, name: 'Ishaan Aggarwal', rating: 4, comment: 'The course is very intensive but worth it. Priya ma\'am is very knowledgeable.', date: '2024-05-18', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Full-Stack Python Development' },
       { id: 2, name: 'Diya Sharma', rating: 5, comment: 'I built a full e-commerce site from scratch. An incredible experience.', date: '2024-05-12', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'Full-Stack Python Development' },
-    ],
-  },
-  {
-    id: 4,
-    title: 'AWS Cloud Practitioner',
-    slug: 'aws-cloud-practitioner',
-    description: 'Get foundational knowledge of the AWS cloud and prepare for the certification exam.',
-    longDescription: 'Start your cloud journey with this foundational course. It covers core AWS services, security, architecture principles, and pricing models. This course is aligned with the official AWS Certified Cloud Practitioner exam, making it the perfect starting point for a career in cloud.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    syllabusPdfUrl: '/pdfs/aws-cloud-practitioner-syllabus.pdf',
-    syllabus: [
-      { title: 'Module 1: Cloud Concepts', content: 'Understanding the benefits and economics of cloud computing.' },
-      { title: 'Module 2: Core AWS Services', content: 'EC2, S3, RDS, VPC - what they are and when to use them.' },
-      { title: 'Module 3: Security and Compliance', content: 'The shared responsibility model and key security services.' },
-      { title: 'Module 4: Cloud Architecture', content: 'The AWS Well-Architected Framework.' },
-      { title: 'Module 5: Pricing and Billing', content: 'Understanding AWS pricing models and cost management.' },
-    ],
-    trainer: trainers.rohanMehta,
-    certification: 'Preparation and guidance for the official AWS Certified Cloud Practitioner exam.',
-    reviews: [
-      { id: 1, name: 'Kabir Singh', rating: 5, comment: 'Passed my AWS exam on the first try thanks to this course!', date: '2024-06-10', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'AWS Cloud Practitioner' },
-      { id: 2, name: 'Anika Verma', rating: 5, comment: 'Rohan sir\'s teaching style is excellent. The material was very clear.', date: '2024-06-05', avatarUrl: 'https://placehold.co/100x100.png', courseTaken: 'AWS Cloud Practitioner' },
     ],
   },
 ];
